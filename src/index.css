@@ -68,8 +68,96 @@ a:hover {
 }
 
 .navbar__brand {
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   color: var(--text);
+}
+
+.navbar__brand:hover {
+  text-decoration: none;
+}
+
+.navbar__logo {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-strong), #8b5cf6, #06b6d4, var(--accent-strong));
+  background-size: 300% 300%;
+  border-radius: 10px;
+  animation: logo-gradient 6s ease-in-out infinite;
+  box-shadow:
+    0 4px 12px rgb(0 0 0 / 0.35),
+    0 0 14px rgb(139 92 246 / 0.35);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbar__brand:hover .navbar__logo {
+  transform: rotate(-8deg) scale(1.06);
+  box-shadow:
+    0 6px 16px rgb(0 0 0 / 0.4),
+    0 0 22px rgb(139 92 246 / 0.55);
+}
+
+/* Reflejo de luz que cruza el logo, como en los botones */
+.navbar__logo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgb(255 255 255 / 0.35) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  animation: btn-shine 4s ease-in-out infinite;
+}
+
+.navbar__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  background: linear-gradient(90deg, var(--text), var(--text));
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: color 0.3s ease;
+}
+
+/* Al pasar el cursor, el nombre toma el degradado del logo */
+.navbar__brand:hover .navbar__name {
+  color: transparent;
+  background-image: linear-gradient(90deg, var(--accent), #a78bfa);
+}
+
+@keyframes logo-gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar__logo,
+  .navbar__logo::after {
+    animation: none;
+  }
+
+  .navbar__logo::after {
+    display: none;
+  }
 }
 
 .navbar__links {
