@@ -93,7 +93,11 @@ a:hover {
 
 /* Hero */
 .hero {
-  padding: 8rem 0 7rem;
+  padding: 8rem 0 1.5rem;
+}
+
+.hero + .section {
+  padding-top: 1.5rem;
 }
 
 .hero__greeting {
