@@ -139,6 +139,12 @@ a:hover {
   transition: background 0.2s, border-color 0.2s;
 }
 
+:where(button.btn) {
+  font: inherit;
+  background: none;
+  cursor: pointer;
+}
+
 .btn:hover {
   text-decoration: none;
   border-color: var(--accent);
@@ -272,11 +278,26 @@ a:hover {
   border-color: #25d366;
 }
 
-.contact__links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+.btn--github {
+  background: #24292f;
+  border-color: #3d444d;
+  color: #fff;
+}
+
+.btn--github:hover {
+  background: #32383f;
+  border-color: #57606a;
+}
+
+.btn--linkedin {
+  background: #0a66c2;
+  border-color: #0a66c2;
+  color: #fff;
+}
+
+.btn--linkedin:hover {
+  background: #1d7fe0;
+  border-color: #1d7fe0;
 }
 
 /* Footer */

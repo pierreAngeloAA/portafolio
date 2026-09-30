@@ -14,10 +14,7 @@ export const profile = {
     'Mis fortalezas son las integraciones con plataformas estatales, la autorización, la optimización de rendimiento y el diagnóstico de fallas en producción entre sistemas distribuidos.',
   ],
   email: 'pierrealgarin@gmail.com',
-  whatsapp: {
-    display: '+57 302 296 3990',
-    number: '573022963990',
-  },
+  whatsapp: '573022963990',
   links: {
     github: 'https://github.com/pierreAngeloAA',
     linkedin: 'https://www.linkedin.com/in/pierre-angelo-a-3937121aa',
