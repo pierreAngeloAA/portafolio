@@ -916,7 +916,7 @@ body:has(.modal[open]) {
   cursor: pointer;
   box-shadow:
     0 6px 18px rgb(0 0 0 / 0.45),
-    0 0 14px rgb(244 63 94 / 0.2);
+    0 0 14px rgb(61 139 253 / 0.25);
   transition:
     transform 0.2s ease,
     border-color 0.2s ease,
@@ -925,29 +925,32 @@ body:has(.modal[open]) {
 
 .like-button:hover {
   transform: translateY(-3px);
-  border-color: #f43f5e;
+  border-color: var(--accent-strong);
   box-shadow:
     0 10px 24px rgb(0 0 0 / 0.5),
-    0 0 22px rgb(244 63 94 / 0.4);
+    0 0 22px rgb(61 139 253 / 0.45);
 }
 
 .like-button:active {
   transform: scale(0.95);
 }
 
-.like-button__heart {
-  width: 1.35rem;
-  height: 1.35rem;
+.like-button__icon {
+  width: 1.3rem;
+  height: 1.3rem;
   fill: none;
-  stroke: #f43f5e;
+  stroke: var(--accent);
   stroke-width: 2;
+  stroke-linecap: round;
   stroke-linejoin: round;
+  transform-origin: 30% 80%;
   transition: fill 0.2s ease;
 }
 
-.like-button--liked .like-button__heart {
-  fill: #f43f5e;
-  animation: like-pop 0.45s ease;
+.like-button--liked .like-button__icon {
+  fill: var(--accent-strong);
+  stroke: var(--accent-strong);
+  animation: like-pop 0.5s ease;
 }
 
 .like-button__count {
@@ -960,10 +963,10 @@ body:has(.modal[open]) {
     transform: scale(1);
   }
   35% {
-    transform: scale(1.45);
+    transform: scale(1.4) rotate(-18deg);
   }
   60% {
-    transform: scale(0.9);
+    transform: scale(0.92) rotate(6deg);
   }
   100% {
     transform: scale(1);
@@ -971,7 +974,7 @@ body:has(.modal[open]) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .like-button--liked .like-button__heart {
+  .like-button--liked .like-button__icon {
     animation: none;
   }
 }
