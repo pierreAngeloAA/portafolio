@@ -557,6 +557,12 @@ body:has(.modal[open]) {
   border-radius: 999px;
 }
 
+.badge--success {
+  color: #4ade80;
+  background: rgb(74 222 128 / 0.12);
+  border-color: rgb(74 222 128 / 0.35);
+}
+
 .badge--warning {
   color: #f5c451;
   background: rgb(245 196 81 / 0.12);

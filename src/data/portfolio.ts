@@ -60,7 +60,7 @@ export const experience: Job[] = [
 export type Project = {
   title: string
   description: string
-  status?: { label: string; tone: 'warning' | 'info' }
+  status?: { label: string; tone: 'success' | 'warning' | 'info' }
   highlights?: { title: string; text: string }[]
   tags: string[]
   repo?: string
@@ -70,6 +70,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: 'Plataforma de fotodetección de infracciones',
+    status: { label: 'En producción', tone: 'success' },
     description:
       'Plataforma para municipios colombianos que gestiona el ciclo de las infracciones de tránsito detectadas por cámaras. Lidero su parte técnica y funcional.',
     highlights: [
