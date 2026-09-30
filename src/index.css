@@ -287,7 +287,7 @@ a:hover {
 /* Projects */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -314,6 +314,34 @@ a:hover {
   margin: 0 0 1rem;
   color: var(--text-muted);
   flex: 1;
+}
+
+.card__highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.card__highlights li {
+  padding: 1rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-strong);
+  border-radius: 8px;
+}
+
+.card__highlights h4 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.card__highlights p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
 }
 
 .card__links {

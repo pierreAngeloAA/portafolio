@@ -10,6 +10,16 @@ export default function Projects() {
             <article key={project.title} className="card">
               <h3 className="card__title">{project.title}</h3>
               <p className="card__text">{project.description}</p>
+              {project.highlights && (
+                <ul className="card__highlights">
+                  {project.highlights.map((h) => (
+                    <li key={h.title}>
+                      <h4>{h.title}</h4>
+                      <p>{h.text}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
               <ul className="tags">
                 {project.tags.map((tag) => (
                   <li key={tag} className="tag">

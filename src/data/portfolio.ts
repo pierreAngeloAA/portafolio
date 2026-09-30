@@ -60,6 +60,7 @@ export const experience: Job[] = [
 export type Project = {
   title: string
   description: string
+  highlights?: { title: string; text: string }[]
   tags: string[]
   repo?: string
   demo?: string
@@ -70,26 +71,34 @@ export const projects: Project[] = [
     title: 'Plataforma de fotodetección de infracciones',
     description:
       'Plataforma para municipios colombianos que gestiona el ciclo de las infracciones de tránsito detectadas por cámaras. Lidero su parte técnica y funcional.',
-    tags: ['Rails 7.2 API', 'Angular', 'PostgreSQL', 'Sidekiq', 'Docker'],
+    highlights: [
+      {
+        title: 'Integraciones con SIMIT, RUNT y la plataforma contravencional',
+        text: 'Envío de infracciones con constructores de payload, reintentos idempotentes y conciliación; consultas al RUNT con caché diario por placa y webhooks de proveedores de cámaras.',
+      },
+      {
+        title: 'Generación de PDF propia',
+        text: 'Generación interna de documentos con plantillas Liquid y Chrome headless sobre S3 + CloudFront, eliminando una dependencia SaaS de pago y una condición de carrera que duplicaba envíos.',
+      },
+      {
+        title: 'Optimización de rendimiento',
+        text: 'Eliminación de consultas N+1 en los endpoints de evidencias, infracciones y tableros; estadísticas agregadas y ordenamientos apoyados en índices.',
+      },
+    ],
+    tags: [
+      'Rails 7.2 API',
+      'Angular',
+      'PostgreSQL',
+      'Redis',
+      'Sidekiq',
+      'Docker',
+      'AWS S3',
+      'CloudFront',
+      'Liquid',
+      'Chrome headless',
+      'Webhooks',
+    ],
     demo: 'https://sadypit.prev.sapenlinea.com.co/',
-  },
-  {
-    title: 'Integraciones con SIMIT, RUNT y la plataforma contravencional',
-    description:
-      'Envío de infracciones con constructores de payload, reintentos idempotentes y conciliación; consultas al RUNT con caché diario por placa y webhooks de proveedores de cámaras.',
-    tags: ['APIs REST', 'Webhooks', 'Redis', 'Sidekiq'],
-  },
-  {
-    title: 'Generación de PDF propia',
-    description:
-      'Generación interna de documentos con plantillas Liquid y Chrome headless sobre S3 + CloudFront, eliminando una dependencia SaaS de pago y una condición de carrera que duplicaba envíos.',
-    tags: ['Liquid', 'Chrome headless', 'AWS S3', 'CloudFront'],
-  },
-  {
-    title: 'Optimización de rendimiento',
-    description:
-      'Eliminación de consultas N+1 en los endpoints de evidencias, infracciones y tableros; estadísticas agregadas y ordenamientos apoyados en índices.',
-    tags: ['PostgreSQL', 'ActiveRecord', 'Índices'],
   },
 ]
 
