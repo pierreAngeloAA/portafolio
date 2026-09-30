@@ -254,6 +254,24 @@ a:hover {
   margin: 0 0 1.5rem;
 }
 
+.contact__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn--whatsapp {
+  background: #1f9d55;
+  border-color: #1f9d55;
+  color: #fff;
+}
+
+.btn--whatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+}
+
 .contact__links {
   display: flex;
   justify-content: center;

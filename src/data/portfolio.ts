@@ -14,6 +14,10 @@ export const profile = {
     'Mis fortalezas son las integraciones con plataformas estatales, la autorización, la optimización de rendimiento y el diagnóstico de fallas en producción entre sistemas distribuidos.',
   ],
   email: 'pierrealgarin@gmail.com',
+  whatsapp: {
+    display: '+57 302 296 3990',
+    number: '573022963990',
+  },
   links: {
     github: 'https://github.com/pierreAngeloAA',
     linkedin: 'https://www.linkedin.com/in/pierre-angelo-a-3937121aa',
@@ -70,6 +74,7 @@ export const projects: Project[] = [
     description:
       'Plataforma para municipios colombianos que gestiona el ciclo de las infracciones de tránsito detectadas por cámaras. Lidero su parte técnica y funcional.',
     tags: ['Rails 7.2 API', 'Angular', 'PostgreSQL', 'Sidekiq', 'Docker'],
+    demo: 'https://sadypit.prev.sapenlinea.com.co/',
   },
   {
     title: 'Integraciones con SIMIT, RUNT y la plataforma contravencional',

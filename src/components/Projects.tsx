@@ -26,7 +26,7 @@ export default function Projects() {
                   )}
                   {project.demo && (
                     <a href={project.demo} target="_blank" rel="noreferrer">
-                      Demo
+                      Ver sitio
                     </a>
                   )}
                 </div>
