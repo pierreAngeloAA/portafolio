@@ -885,3 +885,14 @@ body:has(.modal[open]) {
   margin-top: auto;
   padding-top: 1rem;
 }
+
+/* Párrafos largos justificados; la separación silábica evita huecos entre palabras */
+.about p,
+.timeline__highlights li,
+.project-card__summary,
+.modal__description,
+.card__highlights p {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
