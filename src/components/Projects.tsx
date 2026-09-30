@@ -10,7 +10,11 @@ export default function Projects() {
             <article key={project.title} className="card">
               <div className="card__header">
                 <h3 className="card__title">{project.title}</h3>
-                {project.status && <span className="badge">{project.status}</span>}
+                {project.status && (
+                  <span className={`badge badge--${project.status.tone}`}>
+                    {project.status.label}
+                  </span>
+                )}
               </div>
               <p className="card__text">{project.description}</p>
               {project.highlights && (

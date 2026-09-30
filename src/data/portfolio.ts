@@ -60,7 +60,7 @@ export const experience: Job[] = [
 export type Project = {
   title: string
   description: string
-  status?: string
+  status?: { label: string; tone: 'warning' | 'info' }
   highlights?: { title: string; text: string }[]
   tags: string[]
   repo?: string
@@ -103,7 +103,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Maintenance — Mantenimiento predictivo vehicular',
-    status: 'En desarrollo',
+    status: { label: 'En desarrollo', tone: 'warning' },
     description:
       'Proyecto propio para autos y motos que reemplaza las tablas genéricas de mantenimiento ("cambia el aceite cada 5.000 km") por la probabilidad real de falla de cada pieza. Conecta a los dueños de vehículos con talleres y almacenes de repuestos. API en Rails y tres aplicaciones Angular: cliente, taller y almacén.',
     highlights: [
@@ -135,6 +135,50 @@ export const projects: Project[] = [
       'Brakeman',
       'GitHub Actions',
     ],
+  },
+  {
+    title: 'Configuración versionada, corte de material y reserva de inventario',
+    status: { label: 'Reto técnico', tone: 'info' },
+    description:
+      'Tres ejercicios de backend para un fabricante de productos a medida, cada uno con su documento de decisiones: qué se eligió, qué se descartó y por qué.',
+    highlights: [
+      {
+        title: 'Configuración efectiva',
+        text: 'Historial inmutable de directivas versionadas resuelto con cinco reglas de precedencia en una sola consulta con DISTINCT ON, constante respecto al número de unidades y claves.',
+      },
+      {
+        title: 'Planificador de corte',
+        text: 'Cutting stock con First Fit Decreasing: 5.000 piezas en 0,65 s usando 790 barras frente a una cota inferior de 780. Estrategias alternativas aisladas y medidas.',
+      },
+      {
+        title: 'Reserva de inventario en PL/pgSQL',
+        text: 'Consumo FIFO de lotes seguro ante reintentos y llamadas concurrentes, con bloqueo FOR UPDATE para no declarar faltantes falsos. Probado con dos sesiones simultáneas.',
+      },
+    ],
+    tags: ['Rails 7.2', 'PostgreSQL', 'PL/pgSQL', 'RSpec', 'Algoritmos', 'Concurrencia'],
+    repo: 'https://github.com/pierreAngeloAA/prueba-tecnica-rails',
+  },
+  {
+    title: 'Dashboard de empleados y beneficios',
+    status: { label: 'Reto técnico', tone: 'info' },
+    description:
+      'Aplicación fullstack que unifica la gestión de empleados y sus beneficios con datos de geolocalización de OpenStreetMap. Se levanta completa con un solo comando de Docker.',
+    highlights: [
+      {
+        title: 'Autenticación JWT propia',
+        text: 'Implementada con bcrypt y JWT sin Devise, con cierre de sesión automático en el frontend cuando el token vence.',
+      },
+      {
+        title: 'Integración con OpenStreetMap',
+        text: 'Coordenadas de la ciudad del empleado vía Nominatim, consultadas solo en el detalle para no saturar la API externa.',
+      },
+      {
+        title: 'Pruebas y CI',
+        text: '48 pruebas automatizadas (32 en RSpec y 16 en Vitest) con la API externa simulada, ejecutadas en GitHub Actions.',
+      },
+    ],
+    tags: ['Rails 8.1 API', 'Vue 3', 'Pinia', 'Tailwind CSS', 'JWT', 'Docker', 'Vitest', 'GitHub Actions'],
+    repo: 'https://github.com/pierreAngeloAA/symplifica-dashboard',
   },
 ]
 
