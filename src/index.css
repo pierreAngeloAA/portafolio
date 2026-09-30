@@ -294,8 +294,148 @@ a:hover {
 /* Projects */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
   gap: 1.5rem;
+}
+
+/* Tarjeta compacta de proyecto */
+.project-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  box-shadow:
+    0 12px 28px rgb(0 0 0 / 0.4),
+    0 0 20px rgb(110 168 254 / 0.15);
+}
+
+.project-card__summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+.project-card__open {
+  align-self: flex-start;
+  margin-top: 1.25rem;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.project-card__open::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.project-card:hover .project-card__open {
+  text-decoration: underline;
+}
+
+.project-card__open:focus-visible {
+  outline: none;
+}
+
+.project-card:has(.project-card__open:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Modal de proyecto */
+body:has(.modal[open]) {
+  overflow: hidden;
+}
+
+.modal {
+  width: min(860px, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  padding: 0;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.6);
+}
+
+.modal[open] {
+  animation: modal-in 0.25s ease-out;
+}
+
+.modal::backdrop {
+  background: rgb(5 7 10 / 0.7);
+  backdrop-filter: blur(4px);
+  animation: backdrop-in 0.25s ease-out;
+}
+
+.modal__content {
+  position: relative;
+  padding: 2rem 1.75rem 1.75rem;
+}
+
+.modal__content .card__header {
+  padding-right: 2.5rem;
+}
+
+.modal__description {
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+}
+
+.modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.modal__close:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.modal .card__links {
+  margin-top: 1.5rem;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal[open],
+  .modal::backdrop {
+    animation: none;
+  }
 }
 
 .card {

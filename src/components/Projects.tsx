@@ -1,67 +1,56 @@
-import { projects } from '../data/portfolio'
+import { useState } from 'react'
+import { projects, type Project } from '../data/portfolio'
+import ProjectModal from './ProjectModal'
+
+const VISIBLE_TAGS = 4
 
 export default function Projects() {
+  const [selected, setSelected] = useState<Project | null>(null)
+
   return (
     <section id="proyectos" className="section">
       <div className="container">
         <h2 className="section__title">Proyectos destacados</h2>
         <div className="projects">
-          {projects.map((project) => (
-            <article key={project.title} className="card">
-              <div className="card__header">
-                <h3 className="card__title">{project.title}</h3>
-                {project.status && (
-                  <span className={`badge badge--${project.status.tone}`}>
-                    {project.status.label}
-                  </span>
-                )}
-              </div>
-              <p className="card__text">{project.description}</p>
-              {project.highlights && (
-                <ul className="card__highlights">
-                  {project.highlights.map((h) => (
-                    <li key={h.title}>
-                      <h4>{h.title}</h4>
-                      <p>{h.text}</p>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              <ul className="tags">
-                {project.tags.map((tag) => (
-                  <li key={tag} className="tag">
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-              {(project.repo || project.demo) && (
-                <div className="card__links">
-                  {project.repo && (
-                    <a
-                      href={project.repo}
-                      className="btn"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Código
-                    </a>
-                  )}
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      className="btn btn--primary"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Ver sitio
-                    </a>
+          {projects.map((project) => {
+            const hiddenTags = project.tags.length - VISIBLE_TAGS
+
+            return (
+              <article key={project.title} className="card project-card">
+                <div className="card__header">
+                  <h3 className="card__title">{project.title}</h3>
+                  {project.status && (
+                    <span className={`badge badge--${project.status.tone}`}>
+                      {project.status.label}
+                    </span>
                   )}
                 </div>
-              )}
-            </article>
-          ))}
+                <p className="card__text project-card__summary">
+                  {project.description}
+                </p>
+                <ul className="tags">
+                  {project.tags.slice(0, VISIBLE_TAGS).map((tag) => (
+                    <li key={tag} className="tag">
+                      {tag}
+                    </li>
+                  ))}
+                  {hiddenTags > 0 && <li className="tag">+{hiddenTags}</li>}
+                </ul>
+                {/* El ::before de este botón cubre toda la tarjeta: cualquier clic la abre */}
+                <button
+                  type="button"
+                  className="project-card__open"
+                  onClick={() => setSelected(project)}
+                  aria-haspopup="dialog"
+                >
+                  Ver detalles →
+                </button>
+              </article>
+            )
+          })}
         </div>
       </div>
+      <ProjectModal project={selected} onClose={() => setSelected(null)} />
     </section>
   )
 }
