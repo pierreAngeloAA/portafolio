@@ -203,17 +203,37 @@ export const skills: { group: string; items: string[] }[] = [
   },
 ]
 
-export const education = [
+export type Education = {
+  title: string
+  place: string
+  year?: string
+  detail?: string
+  documents?: { label: string; src: string }[]
+}
+
+// Imágenes en public/documentos, con el número de cédula tapado
+export const education: Education[] = [
   {
     title: 'Ingeniero Mecánico',
     place: 'Universidad Autónoma del Caribe',
     year: '2021',
-    detail: 'Matrícula Profesional AT230-159268 – Consejo Profesional Nacional de Ingeniería',
+    documents: [
+      { label: 'Diploma', src: '/documentos/diploma.jpg' },
+      { label: 'Acta de grado', src: '/documentos/acta.jpg' },
+    ],
+  },
+  {
+    title: 'Matrícula Profesional AT230-159268',
+    place: 'Consejo Profesional Nacional de Ingenierías Eléctrica, Mecánica y Profesiones Afines',
+    year: '2022',
+    documents: [{ label: 'Matrícula profesional', src: '/documentos/matricula.jpg' }],
   },
   {
     title: 'Diplomado en Gestión de Mantenimiento',
-    place: 'ACIEM Barranquilla',
+    place: 'ACIEM Capítulo del Atlántico',
     year: '2021',
+    detail: '120 horas',
+    documents: [{ label: 'Certificado', src: '/documentos/diplomado.jpg' }],
   },
   {
     title: 'Formación autodidacta en desarrollo',

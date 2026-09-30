@@ -298,13 +298,13 @@ a:hover {
   gap: 1.5rem;
 }
 
-/* Tarjeta compacta de proyecto */
-.project-card {
+/* Tarjeta clicable que abre un modal */
+.card--clickable {
   position: relative;
   cursor: pointer;
 }
 
-.project-card:hover {
+.card--clickable:hover {
   box-shadow:
     0 12px 28px rgb(0 0 0 / 0.4),
     0 0 20px rgb(110 168 254 / 0.15);
@@ -318,7 +318,7 @@ a:hover {
   overflow: hidden;
 }
 
-.project-card__open {
+.card__open {
   align-self: flex-start;
   margin-top: 1.25rem;
   padding: 0;
@@ -330,22 +330,22 @@ a:hover {
   cursor: pointer;
 }
 
-.project-card__open::before {
+.card__open::before {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
 }
 
-.project-card:hover .project-card__open {
+.card--clickable:hover .card__open {
   text-decoration: underline;
 }
 
-.project-card__open:focus-visible {
+.card__open:focus-visible {
   outline: none;
 }
 
-.project-card:has(.project-card__open:focus-visible) {
+.card--clickable:has(.card__open:focus-visible) {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
@@ -412,6 +412,56 @@ body:has(.modal[open]) {
 
 .modal .card__links {
   margin-top: 1.5rem;
+}
+
+/* Modal de documentos */
+.modal--document {
+  width: min(1000px, calc(100% - 2rem));
+}
+
+.document__title {
+  padding-right: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.document__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.document__tab {
+  padding: 0.4rem 1rem;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.document__tab:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.document__tab[aria-selected='true'] {
+  color: #fff;
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+.document__image {
+  display: block;
+  width: 100%;
+  max-height: calc(100dvh - 12rem);
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
 }
 
 @keyframes modal-in {
@@ -693,12 +743,13 @@ body:has(.modal[open]) {
 /* Education */
 .education {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
 .education .card__text {
   margin: 0;
+  flex: 0;
 }
 
 .education__detail {
@@ -710,4 +761,9 @@ body:has(.modal[open]) {
 .education__languages-title {
   margin: 2.5rem 0 0.75rem;
   font-size: 1.1rem;
+}
+
+.education .card__open {
+  margin-top: auto;
+  padding-top: 1rem;
 }

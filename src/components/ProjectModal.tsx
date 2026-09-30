@@ -1,5 +1,5 @@
-import { useEffect, useRef, type MouseEvent } from 'react'
 import type { Project } from '../data/portfolio'
+import Modal from './Modal'
 
 type Props = {
   project: Project | null
@@ -7,40 +7,12 @@ type Props = {
 }
 
 export default function ProjectModal({ project, onClose }: Props) {
-  const dialogRef = useRef<HTMLDialogElement>(null)
-
-  useEffect(() => {
-    const dialog = dialogRef.current
-    if (!dialog) return
-    if (project && !dialog.open) dialog.showModal()
-    if (!project && dialog.open) dialog.close()
-  }, [project])
-
-  // Un clic sobre el propio <dialog> (y no sobre su contenido) es un clic en el fondo
-  const handleClick = (event: MouseEvent<HTMLDialogElement>) => {
-    if (event.target === event.currentTarget) onClose()
-  }
-
   return (
-    <dialog
-      ref={dialogRef}
-      className="modal"
-      onClose={onClose}
-      onClick={handleClick}
-      aria-labelledby="modal-title"
-    >
+    <Modal open={project !== null} onClose={onClose} labelledBy="project-modal-title">
       {project && (
-        <div className="modal__content">
-          <button
-            type="button"
-            className="modal__close"
-            onClick={onClose}
-            aria-label="Cerrar"
-          >
-            ✕
-          </button>
+        <>
           <div className="card__header">
-            <h3 id="modal-title" className="card__title">
+            <h3 id="project-modal-title" className="card__title">
               {project.title}
             </h3>
             {project.status && (
@@ -91,8 +63,8 @@ export default function ProjectModal({ project, onClose }: Props) {
               )}
             </div>
           )}
-        </div>
+        </>
       )}
-    </dialog>
+    </Modal>
   )
 }

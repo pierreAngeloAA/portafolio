@@ -16,7 +16,7 @@ export default function Projects() {
             const hiddenTags = project.tags.length - VISIBLE_TAGS
 
             return (
-              <article key={project.title} className="card project-card">
+              <article key={project.title} className="card card--clickable">
                 <div className="card__header">
                   <h3 className="card__title">{project.title}</h3>
                   {project.status && (
@@ -39,7 +39,7 @@ export default function Projects() {
                 {/* El ::before de este botón cubre toda la tarjeta: cualquier clic la abre */}
                 <button
                   type="button"
-                  className="project-card__open"
+                  className="card__open"
                   onClick={() => setSelected(project)}
                   aria-haspopup="dialog"
                 >
