@@ -60,6 +60,7 @@ export const experience: Job[] = [
 export type Project = {
   title: string
   description: string
+  status?: string
   highlights?: { title: string; text: string }[]
   tags: string[]
   repo?: string
@@ -99,6 +100,41 @@ export const projects: Project[] = [
       'Webhooks',
     ],
     demo: 'https://sadypit.prev.sapenlinea.com.co/',
+  },
+  {
+    title: 'Maintenance — Mantenimiento predictivo vehicular',
+    status: 'En desarrollo',
+    description:
+      'Proyecto propio para autos y motos que reemplaza las tablas genéricas de mantenimiento ("cambia el aceite cada 5.000 km") por la probabilidad real de falla de cada pieza. Conecta a los dueños de vehículos con talleres y almacenes de repuestos. API en Rails y tres aplicaciones Angular: cliente, taller y almacén.',
+    highlights: [
+      {
+        title: 'Motor de confiabilidad',
+        text: 'Curvas de riesgo tipo Weibull por pieza, ajustadas por el clima y el terreno de la ciudad del vehículo, que estiman el riesgo de falla en el próximo tramo de uso.',
+      },
+      {
+        title: 'Red de talleres y almacenes',
+        text: 'Solicitudes de servicio ofrecidas a los talleres cercanos (distancia Haversine en SQL), permisos de acceso del dueño al vehículo y compra de repuestos compatibles en una transacción que evita la sobreventa.',
+      },
+      {
+        title: 'Diagnóstico mensual',
+        text: 'Reporte que combina la predicción del motor de riesgo, la inspección del técnico y los vencimientos del RUNT, generado en segundo plano.',
+      },
+      {
+        title: 'Integraciones y calidad',
+        text: 'NHTSA para decodificar el VIN y consultar recalls, y RUNT vía PlacApi, sin bloquear nunca el registro. TDD con cobertura mínima del 80 % verificada en CI.',
+      },
+    ],
+    tags: [
+      'Rails 8.1 API',
+      'Angular 20',
+      'TypeScript',
+      'PostgreSQL',
+      'RSpec',
+      'Jasmine / Karma',
+      'NHTSA API',
+      'Brakeman',
+      'GitHub Actions',
+    ],
   },
 ]
 

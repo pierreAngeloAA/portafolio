@@ -319,9 +319,31 @@ a:hover {
   flex: 1;
 }
 
+.card__header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.card__header .card__title {
+  margin: 0;
+}
+
+.badge {
+  padding: 0.15rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #f5c451;
+  background: rgb(245 196 81 / 0.12);
+  border: 1px solid rgb(245 196 81 / 0.35);
+  border-radius: 999px;
+}
+
 .card__highlights {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
   margin: 0 0 1.25rem;
   padding: 0;

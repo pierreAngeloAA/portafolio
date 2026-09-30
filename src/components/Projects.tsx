@@ -8,7 +8,10 @@ export default function Projects() {
         <div className="projects">
           {projects.map((project) => (
             <article key={project.title} className="card">
-              <h3 className="card__title">{project.title}</h3>
+              <div className="card__header">
+                <h3 className="card__title">{project.title}</h3>
+                {project.status && <span className="badge">{project.status}</span>}
+              </div>
               <p className="card__text">{project.description}</p>
               {project.highlights && (
                 <ul className="card__highlights">
