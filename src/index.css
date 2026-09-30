@@ -130,13 +130,120 @@ a:hover {
 
 /* Buttons */
 .btn {
+  --btn-glow: rgb(110 168 254 / 0.25);
+
+  position: relative;
+  overflow: hidden;
   display: inline-block;
   padding: 0.7rem 1.4rem;
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text);
   font-weight: 600;
-  transition: background 0.2s, border-color 0.2s;
+  box-shadow:
+    0 4px 10px rgb(0 0 0 / 0.35),
+    0 0 14px var(--btn-glow);
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Reflejo de luz que cruza el botón */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgb(255 255 255 / 0.25) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  animation: btn-shine 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 22px rgb(0 0 0 / 0.45),
+    0 0 26px var(--btn-glow);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow:
+    0 2px 6px rgb(0 0 0 / 0.4),
+    0 0 10px var(--btn-glow);
+}
+
+/* Flotación continua, desfasada entre botones */
+.hero__actions .btn,
+.contact__actions .btn {
+  animation: btn-float 3s ease-in-out infinite;
+}
+
+.hero__actions .btn:nth-child(2),
+.contact__actions .btn:nth-child(2) {
+  animation-delay: -0.75s;
+}
+
+.contact__actions .btn:nth-child(3) {
+  animation-delay: -1.5s;
+}
+
+.contact__actions .btn:nth-child(4) {
+  animation-delay: -2.25s;
+}
+
+.hero__actions .btn:nth-child(2)::after,
+.contact__actions .btn:nth-child(2)::after {
+  animation-delay: 0.5s;
+}
+
+.contact__actions .btn:nth-child(3)::after {
+  animation-delay: 1s;
+}
+
+.contact__actions .btn:nth-child(4)::after {
+  animation-delay: 1.5s;
+}
+
+@keyframes btn-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+@keyframes btn-shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  40%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn::after {
+    animation: none !important;
+    transition: none;
+  }
+
+  .btn::after {
+    display: none;
+  }
 }
 
 :where(button.btn) {
@@ -145,12 +252,8 @@ a:hover {
   cursor: pointer;
 }
 
-.btn:hover {
-  text-decoration: none;
-  border-color: var(--accent);
-}
-
 .btn--primary {
+  --btn-glow: rgb(61 139 253 / 0.45);
   background: var(--accent-strong);
   border-color: var(--accent-strong);
   color: #fff;
@@ -268,6 +371,7 @@ a:hover {
 }
 
 .btn--whatsapp {
+  --btn-glow: rgb(37 211 102 / 0.4);
   background: #1f9d55;
   border-color: #1f9d55;
   color: #fff;
@@ -279,6 +383,7 @@ a:hover {
 }
 
 .btn--github {
+  --btn-glow: rgb(200 210 225 / 0.2);
   background: #24292f;
   border-color: #3d444d;
   color: #fff;
@@ -290,6 +395,7 @@ a:hover {
 }
 
 .btn--linkedin {
+  --btn-glow: rgb(10 102 194 / 0.5);
   background: #0a66c2;
   border-color: #0a66c2;
   color: #fff;
