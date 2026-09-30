@@ -30,12 +30,22 @@ export default function Projects() {
               {(project.repo || project.demo) && (
                 <div className="card__links">
                   {project.repo && (
-                    <a href={project.repo} target="_blank" rel="noreferrer">
+                    <a
+                      href={project.repo}
+                      className="btn"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Código
                     </a>
                   )}
                   {project.demo && (
-                    <a href={project.demo} target="_blank" rel="noreferrer">
+                    <a
+                      href={project.demo}
+                      className="btn btn--primary"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Ver sitio
                     </a>
                   )}

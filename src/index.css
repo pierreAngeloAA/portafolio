@@ -184,12 +184,14 @@ a:hover {
 
 /* Flotación continua, desfasada entre botones */
 .hero__actions .btn,
-.contact__actions .btn {
+.contact__actions .btn,
+.card__links .btn {
   animation: btn-float 3s ease-in-out infinite;
 }
 
 .hero__actions .btn:nth-child(2),
-.contact__actions .btn:nth-child(2) {
+.contact__actions .btn:nth-child(2),
+.card__links .btn:nth-child(2) {
   animation-delay: -0.75s;
 }
 
@@ -202,7 +204,8 @@ a:hover {
 }
 
 .hero__actions .btn:nth-child(2)::after,
-.contact__actions .btn:nth-child(2)::after {
+.contact__actions .btn:nth-child(2)::after,
+.card__links .btn:nth-child(2)::after {
   animation-delay: 0.5s;
 }
 
@@ -346,6 +349,7 @@ a:hover {
 
 .card__links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
   font-weight: 600;
