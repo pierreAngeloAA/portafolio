@@ -103,7 +103,7 @@ export const projects: Project[] = [
     demo: 'https://sadypit.prev.sapenlinea.com.co/',
   },
   {
-    title: 'Maintenance — Mantenimiento predictivo vehicular',
+    title: 'TallernApp — Mantenimiento predictivo vehicular',
     status: { label: 'En desarrollo', tone: 'warning' },
     description:
       'Proyecto propio para autos y motos que reemplaza las tablas genéricas de mantenimiento ("cambia el aceite cada 5.000 km") por la probabilidad real de falla de cada pieza. Conecta a los dueños de vehículos con talleres y almacenes de repuestos. API en Rails y tres aplicaciones Angular: cliente, taller y almacén.',
@@ -136,6 +136,7 @@ export const projects: Project[] = [
       'Brakeman',
       'GitHub Actions',
     ],
+    demo: 'https://tallernapp.com/client/login?returnUrl=%2Fclient%2Fvehicles',
   },
   {
     title: 'Configuración versionada, corte de material y reserva de inventario',
