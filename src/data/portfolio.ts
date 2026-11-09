@@ -5,8 +5,6 @@ export const profile = {
   fullName: 'Pierre Angelo Algarín Vigna',
   role: 'Desarrollador Full-Stack · Líder Técnico y Funcional',
   stack: ['Ruby on Rails', 'Java / Spring Boot', 'Angular', 'React', 'PostgreSQL', 'AWS', 'Docker'],
-  tagline:
-    'Construyo aplicaciones web con Ruby on Rails, Java / Spring Boot y Angular / React, con foco en integraciones, arquitectura y rendimiento.',
   location: 'Barranquilla, Colombia',
   about: [
     'Desarrollador full-stack con cuatro años construyendo aplicaciones web en Ruby on Rails y Angular / React, y backend en Java con Spring Boot.',

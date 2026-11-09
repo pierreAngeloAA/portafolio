@@ -14,7 +14,6 @@ export default function Hero() {
             </li>
           ))}
         </ul>
-        <p className="hero__tagline">{profile.tagline}</p>
         <p className="hero__location">{profile.location}</p>
         <div className="hero__actions">
           <a href="#proyectos" className="btn btn--primary">

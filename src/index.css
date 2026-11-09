@@ -231,13 +231,6 @@ a:hover {
   font-weight: 500;
 }
 
-.hero__tagline {
-  max-width: 36rem;
-  margin: 1.5rem 0 2rem;
-  font-size: 1.1rem;
-  color: var(--text-muted);
-}
-
 .hero__actions {
   display: flex;
   gap: 1rem;
@@ -796,8 +789,8 @@ body:has(.modal[open]) {
   margin-top: 1.25rem;
 }
 
-.hero__tagline + .hero__location {
-  margin: -1.25rem 0 2rem;
+.hero__location {
+  margin: 1.5rem 0 2rem;
   color: var(--text-muted);
   font-size: 0.95rem;
 }
