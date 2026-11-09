@@ -4,8 +4,19 @@ export const profile = {
   name: 'Pierre Algarín',
   fullName: 'Pierre Angelo Algarín Vigna',
   role: 'Desarrollador Full-Stack · Líder Técnico y Funcional',
-  stack: ['Ruby on Rails', 'Java / Spring Boot', 'Angular', 'React', 'PostgreSQL', 'AWS', 'Docker'],
+  // Cada tecnología enlaza a su documentación oficial
+  stack: [
+    { name: 'Ruby on Rails', docs: 'https://guides.rubyonrails.org/' },
+    { name: 'Java', docs: 'https://docs.oracle.com/en/java/' },
+    { name: 'Spring Boot', docs: 'https://docs.spring.io/spring-boot/' },
+    { name: 'Angular', docs: 'https://angular.dev/' },
+    { name: 'React', docs: 'https://react.dev/' },
+    { name: 'PostgreSQL', docs: 'https://www.postgresql.org/docs/' },
+    { name: 'AWS', docs: 'https://docs.aws.amazon.com/' },
+    { name: 'Docker', docs: 'https://docs.docker.com/' },
+  ],
   location: 'Barranquilla, Colombia',
+  locationUrl: 'https://www.google.com/maps/place/Barranquilla,+Atl%C3%A1ntico,+Colombia',
   about: [
     'Desarrollador full-stack con cuatro años construyendo aplicaciones web en Ruby on Rails y Angular / React, y backend en Java con Spring Boot.',
     'Actualmente soy Líder Técnico y Funcional de una plataforma de fotodetección de infracciones de tránsito para municipios colombianos.',

@@ -9,12 +9,24 @@ export default function Hero() {
         <h2 className="hero__role">{profile.role}</h2>
         <ul className="tags hero__stack">
           {profile.stack.map((tech) => (
-            <li key={tech} className="tag">
-              {tech}
+            <li key={tech.name}>
+              <a
+                className="tag tag--link"
+                href={tech.docs}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Documentación oficial de ${tech.name}`}
+              >
+                {tech.name}
+              </a>
             </li>
           ))}
         </ul>
-        <p className="hero__location">{profile.location}</p>
+        <p className="hero__location">
+          <a href={profile.locationUrl} target="_blank" rel="noopener noreferrer">
+            {profile.location}
+          </a>
+        </p>
         <div className="hero__actions">
           <a href="#proyectos" className="btn btn--primary">
             Ver proyectos

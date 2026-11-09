@@ -710,6 +710,18 @@ body:has(.modal[open]) {
   border-radius: 999px;
 }
 
+.tag--link {
+  display: inline-block;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.tag--link:hover,
+.tag--link:focus-visible {
+  background: rgb(110 168 254 / 0.22);
+  transform: translateY(-1px);
+}
+
 /* Skills */
 .skills {
   display: grid;
@@ -793,6 +805,17 @@ body:has(.modal[open]) {
   margin: 1.5rem 0 2rem;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+.hero__location a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero__location a:hover,
+.hero__location a:focus-visible {
+  color: var(--text);
+  text-decoration: underline;
 }
 
 /* Experience */
