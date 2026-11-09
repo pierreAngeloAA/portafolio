@@ -150,6 +150,7 @@ export const projects: Project[] = [
       'AWS ECS Fargate',
       'Bitbucket Pipelines',
     ],
+    demo: 'https://contravencional.dev.sapenlinea.com.co/login',
   },
   {
     title: 'TallernApp — Mantenimiento predictivo vehicular',
