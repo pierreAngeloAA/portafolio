@@ -4,14 +4,14 @@ export const profile = {
   name: 'Pierre Algarín',
   fullName: 'Pierre Angelo Algarín Vigna',
   role: 'Desarrollador Full-Stack · Líder Técnico y Funcional',
-  stack: ['Ruby on Rails', 'Angular', 'React', 'PostgreSQL', 'AWS', 'Docker'],
+  stack: ['Ruby on Rails', 'Java / Spring Boot', 'Angular', 'React', 'PostgreSQL', 'AWS', 'Docker'],
   tagline:
-    'Construyo aplicaciones web con Ruby on Rails y frameworks modernos de JavaScript, con foco en integraciones, seguridad y rendimiento.',
+    'Construyo aplicaciones web con Ruby on Rails, Java / Spring Boot y Angular / React, con foco en integraciones, arquitectura y rendimiento.',
   location: 'Barranquilla, Colombia',
   about: [
-    'Desarrollador full-stack con cuatro años construyendo aplicaciones web en Ruby on Rails y frameworks modernos de JavaScript.',
+    'Desarrollador full-stack con cuatro años construyendo aplicaciones web en Ruby on Rails y Angular / React, y backend en Java con Spring Boot.',
     'Actualmente soy Líder Técnico y Funcional de una plataforma de fotodetección de infracciones de tránsito para municipios colombianos.',
-    'Mis fortalezas son las integraciones con plataformas estatales, la autorización, la optimización de rendimiento y el diagnóstico de fallas en producción entre sistemas distribuidos.',
+    'Mis fortalezas son las integraciones con plataformas estatales, la arquitectura, la autorización, la optimización de rendimiento y el despliegue en AWS.',
   ],
   email: 'pierrealgarin@gmail.com',
   whatsapp: '573022963990',
@@ -37,7 +37,10 @@ export const experience: Job[] = [
     location: 'Barranquilla, Colombia · Remoto',
     highlights: [
       'Dirección técnica, decisiones de arquitectura y revisión de código del proyecto de fotodetección, junto con la definición funcional del flujo de infracciones con las autoridades de tránsito.',
-      'Desarrollador backend principal: Ruby 3.3 / Rails 7.2 API-only, PostgreSQL, Redis + Sidekiq, Docker, AWS S3 + CloudFront, con frontend en Angular.',
+      'Desarrollador backend principal de fotodetección: Ruby 3.3 / Rails 7.2 API-only, PostgreSQL, Redis + Sidekiq, AASM, Docker y AWS (ECS, ECR, S3, CloudFront) con despliegue continuo en GitHub Actions.',
+      'Contravencional y cobro coactivo: funcionalidades backend en Java 21 y Spring Boot sobre PostgreSQL, en un monolito modular migrado desde Oracle con el patrón Strangler Fig, integración SOAP con SIMIT mediante patrón outbox y despliegue en AWS ECS Fargate con Bitbucket Pipelines (Spring Security, Spring Data JPA, Flyway, Redis, OpenAPI, JUnit, Mockito).',
+      'Frontend en Angular 20, TypeScript, RxJS, Angular Material y Jest, con arquitectura de microfrontends sobre Angular Elements.',
+      'Generación de PDF con Liquid y Chrome headless en Rails y en un servicio NestJS, eliminando una dependencia SaaS de pago.',
       'Integraciones con plataformas estatales: envío de infracciones a SIMIT y a la plataforma contravencional, consultas al RUNT y webhooks de proveedores de cámaras.',
       'Autorización y seguridad: control de acceso por roles con permisos por acción, auditoría, corrección de inyección SQL y de enumeración de usuarios; Brakeman en el flujo de trabajo.',
       'Migración de la suite de pruebas de Minitest a RSpec con servicios externos simulados; capacitación y soporte de segunda línea a las autoridades de tránsito.',
@@ -103,6 +106,43 @@ export const projects: Project[] = [
     demo: 'https://sadypit.prev.sapenlinea.com.co/',
   },
   {
+    title: 'Sistema contravencional y de cobro coactivo',
+    status: { label: 'En desarrollo', tone: 'warning' },
+    description:
+      'Migración del sistema contravencional de una Secretaría de Tránsito desde un monolito Oracle / Java legado hacia un stack moderno: cursos de capacitación, cobro coactivo, expediente documental, acuerdos de pago e integración con SIMIT.',
+    highlights: [
+      {
+        title: 'Monolito modular con Strangler Fig',
+        text: 'Bounded contexts con capas api, application, domain e infrastructure, y una capa anticorrupción hacia los catálogos e identificadores del sistema legado.',
+      },
+      {
+        title: 'Integración con SIMIT mediante outbox',
+        text: 'Recaudo sincronizado por SOAP a través de una tabla outbox y un job de reintentos, para no perder eventos cuando SIMIT no responde.',
+      },
+      {
+        title: 'Documentos y procesos programados',
+        text: 'Resoluciones, mandamientos de pago y certificados en PDF con código QR firmado con HMAC, generados por jobs diarios con Flyway gestionando el esquema.',
+      },
+      {
+        title: 'Microfrontends y despliegue',
+        text: 'Shell en Angular que carga cada módulo como Web Component con Angular Elements; backend en contenedores sobre AWS ECS Fargate y frontends en S3 + CloudFront, desplegados con Bitbucket Pipelines.',
+      },
+    ],
+    tags: [
+      'Java 21',
+      'Spring Boot 3.5',
+      'Spring Security',
+      'PostgreSQL',
+      'Flyway',
+      'Redis',
+      'OpenAPI',
+      'Angular 20',
+      'Angular Elements',
+      'AWS ECS Fargate',
+      'Bitbucket Pipelines',
+    ],
+  },
+  {
     title: 'TallernApp — Mantenimiento predictivo vehicular',
     status: { label: 'En desarrollo', tone: 'warning' },
     description:
@@ -137,6 +177,33 @@ export const projects: Project[] = [
       'GitHub Actions',
     ],
     demo: 'https://tallernapp.com/client/login?returnUrl=%2Fclient%2Fvehicles',
+  },
+  {
+    title: 'verified-recipes — Recetas verificadas para agentes de IA',
+    status: { label: 'Publicado en npm', tone: 'success' },
+    description:
+      'Paquete npm con un servidor MCP local que da a los agentes de IA recetas cortas sobre errores frecuentes en Rails, Spring Boot, React y Swift, cada una respaldada por un script que se ejecuta contra las versiones más recientes.',
+    highlights: [
+      {
+        title: 'Verificación continua',
+        text: 'GitHub Actions ejecuta cada receta todas las semanas: la forma correcta debe funcionar y el error debe seguir fallando. Si una versión nueva cambia el resultado, la receta se marca y se abre un issue.',
+      },
+      {
+        title: 'Servidor MCP',
+        text: 'Dos herramientas de solo lectura, search_recipes y get_recipe, con búsqueda ponderada por mensaje de error, etiquetas y título.',
+      },
+    ],
+    tags: ['Node.js', 'MCP', 'Zod', 'GitHub Actions', 'GitHub Pages', 'npm'],
+    repo: 'https://github.com/pierreAngeloAA/verified-recipes',
+    demo: 'https://www.npmjs.com/package/verified-recipes',
+  },
+  {
+    title: 'Dashboard de Clash of Clans',
+    status: { label: 'Proyecto personal', tone: 'info' },
+    description:
+      'Dashboard del progreso de cuentas de Clash of Clans. Lee un Google Sheet público (gviz y la vista htmlview coloreada) e integra la API oficial mediante un proxy que resguarda el token.',
+    tags: ['React', 'Vite', 'Tailwind CSS', 'Google Sheets', 'API REST'],
+    repo: 'https://github.com/pierreAngeloAA/clash-dashboard',
   },
   {
     title: 'Configuración versionada, corte de material y reserva de inventario',
@@ -185,23 +252,23 @@ export const projects: Project[] = [
 ]
 
 export const skills: { group: string; items: string[] }[] = [
-  { group: 'Lenguajes', items: ['Ruby', 'JavaScript', 'TypeScript', 'SQL y PL/pgSQL', 'HTML', 'CSS'] },
+  { group: 'Lenguajes', items: ['Ruby', 'Java 21', 'JavaScript', 'TypeScript', 'SQL y PL/pgSQL', 'HTML', 'CSS'] },
   {
     group: 'Backend',
-    items: ['Ruby on Rails (API-only y MVC)', 'APIs REST', 'Service Objects', 'ActiveRecord', 'ActiveJob', 'Sidekiq', 'Liquid'],
+    items: ['Ruby on Rails (API-only y MVC)', 'Spring Boot', 'Spring Data JPA', 'NestJS', 'APIs REST y SOAP', 'OpenAPI', 'Service Objects', 'ActiveRecord', 'ActiveJob', 'Sidekiq', 'Liquid'],
   },
   {
     group: 'Frontend',
-    items: ['React + Vite', 'Angular', 'Vue 3', 'Tailwind CSS', 'Bootstrap', 'Materialize', 'Node.js'],
+    items: ['React 19 + Vite', 'Angular 20', 'Angular Elements', 'Angular Material', 'RxJS', 'Vue 3', 'Tailwind CSS', 'Bootstrap', 'Materialize', 'Node.js'],
   },
   {
     group: 'Bases de datos y nube',
-    items: ['PostgreSQL', 'MySQL', 'Redis', 'Docker', 'AWS (S3, CloudFront)', 'Cloudflare R2'],
+    items: ['PostgreSQL', 'MySQL', 'Redis', 'Flyway', 'Docker y Compose', 'AWS (ECS Fargate, ECR, RDS, S3, CloudFront, SNS, CloudWatch)', 'Cloudflare R2', 'CI/CD (GitHub Actions, Bitbucket Pipelines)'],
   },
-  { group: 'Autenticación y seguridad', items: ['JWT', 'Devise', 'Sorcery', 'RBAC', 'API keys', 'Brakeman'] },
+  { group: 'Autenticación y seguridad', items: ['JWT', 'Devise', 'Sorcery', 'Spring Security', 'RBAC', 'API keys', 'Brakeman'] },
   {
     group: 'Pruebas y metodologías',
-    items: ['RSpec', 'FactoryBot', 'Postman', 'Agile', 'Jira', 'Git flow', 'Clean Code', 'SOLID', 'Claude Code'],
+    items: ['RSpec', 'FactoryBot', 'JUnit', 'Mockito', 'Jest', 'Vitest', 'Playwright', 'Postman', 'Agile', 'Jira', 'Git flow', 'Clean Code', 'SOLID', 'Desarrollo asistido por IA (Claude Code, MCP)'],
   },
 ]
 
@@ -243,4 +310,4 @@ export const education: Education[] = [
   },
 ]
 
-export const languages = ['Español – Nativo', 'Inglés – Lectura']
+export const languages = ['Español – Nativo', 'Inglés técnico – Lectura']
