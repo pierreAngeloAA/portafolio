@@ -5,7 +5,16 @@ export default function Hero() {
     <section id="inicio" className="hero">
       <div className="container">
         <p className="hero__greeting">Hola, soy</p>
-        <h1 className="hero__name">{profile.name}</h1>
+        <h1 className="hero__name">
+          <a
+            href={profile.links.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Ver mi perfil de LinkedIn"
+          >
+            {profile.name}
+          </a>
+        </h1>
         <h2 className="hero__role">{profile.role}</h2>
         <ul className="tags hero__stack">
           {profile.stack.map((tech) => (
