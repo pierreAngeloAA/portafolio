@@ -145,7 +145,7 @@ export const projects: Project[] = [
       'Flyway',
       'Redis',
       'OpenAPI',
-      'Angular 20',
+      'Angular 22',
       'Angular Elements',
       'AWS ECS Fargate',
       'Bitbucket Pipelines',
@@ -212,8 +212,9 @@ export const projects: Project[] = [
     status: { label: 'Proyecto personal', tone: 'info' },
     description:
       'Dashboard del progreso de cuentas de Clash of Clans. Lee un Google Sheet público (gviz y la vista htmlview coloreada) e integra la API oficial mediante un proxy que resguarda el token.',
-    tags: ['React', 'Vite', 'Tailwind CSS', 'Google Sheets', 'API REST'],
+    tags: ['Rails 8.1 API', 'PostgreSQL', 'React 19', 'Vite', 'Tailwind CSS', 'API REST', 'GitHub Actions'],
     repo: 'https://github.com/pierreAngeloAA/clash-dashboard',
+    demo: 'https://clash-progreso-web.onrender.com',
   },
   {
     title: 'Configuración versionada, corte de material y reserva de inventario',
@@ -234,7 +235,7 @@ export const projects: Project[] = [
         text: 'Consumo FIFO de lotes seguro ante reintentos y llamadas concurrentes, con bloqueo FOR UPDATE para no declarar faltantes falsos. Probado con dos sesiones simultáneas.',
       },
     ],
-    tags: ['Rails 7.2', 'PostgreSQL', 'PL/pgSQL', 'RSpec', 'Algoritmos', 'Concurrencia'],
+    tags: ['Rails 8.1', 'PostgreSQL', 'PL/pgSQL', 'RSpec', 'Algoritmos', 'Concurrencia', 'GitHub Actions'],
     repo: 'https://github.com/pierreAngeloAA/prueba-tecnica-rails',
   },
   {
@@ -253,7 +254,7 @@ export const projects: Project[] = [
       },
       {
         title: 'Pruebas y CI',
-        text: '48 pruebas automatizadas (32 en RSpec y 16 en Vitest) con la API externa simulada, ejecutadas en GitHub Actions.',
+        text: '53 pruebas automatizadas (32 en RSpec y 21 en Vitest) con la API externa simulada, ejecutadas en GitHub Actions.',
       },
     ],
     tags: ['Rails 8.1 API', 'Vue 3', 'Pinia', 'Tailwind CSS', 'JWT', 'Docker', 'Vitest', 'GitHub Actions'],
