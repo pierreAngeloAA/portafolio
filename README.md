@@ -1,32 +1,29 @@
-# React + TypeScript + Vite
+# Portfolio — Pierre Algarín
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal portfolio site: experience, projects, skills, education and contact.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + TypeScript + Vite
+- Oxlint
+- Vercel (hosting and the `api/likes.ts` serverless function)
+- Upstash Redis for the like counter, with voters hashed from IP + user agent so no IP is stored in clear
 
-## React Compiler
+## Editing the content
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+All the text lives in **`src/data/portfolio.ts`**: experience, projects (with repo and demo links), skills and education. The components in `src/components/` only render that data.
 
-## Expanding the Oxlint configuration
+## Development
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm ci
+npm run dev       # http://localhost:5173
+npm run lint
+npm run build     # type-check + production build in dist/
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The like button needs `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` (or Vercel's `KV_REST_API_*`). Without them the API answers without persisting.
+
+## Deploy
+
+Vercel builds and deploys every push to `main`. Work happens on `staging` and is promoted to `main` when ready.
