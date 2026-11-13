@@ -22,7 +22,7 @@ npm run lint
 npm run build     # type-check + production build in dist/
 ```
 
-The like button needs `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` (or Vercel's `KV_REST_API_*`). Without them the API answers without persisting.
+The like button needs `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` (or Vercel's `KV_REST_API_*`). Without them `/api/likes` answers `503 likes_unavailable` and the rest of the site works normally.
 
 ## Deploy
 
