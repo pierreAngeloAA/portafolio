@@ -13,6 +13,16 @@ Personal portfolio site: experience, projects, skills, education and contact.
 
 All the text lives in **`src/data/portfolio.ts`**: experience, projects (with repo and demo links), skills and education. The components in `src/components/` only render that data.
 
+## CV
+
+`cv/cv.es.html` and `cv/cv.en.html` are the sources of the downloadable PDFs in `public/cv/`. After editing one, print it again:
+
+```bash
+google-chrome --headless --no-pdf-header-footer --print-to-pdf=public/cv/pierre-algarin-cv-es.pdf cv/cv.es.html
+```
+
+They are public: do not add phone numbers of references.
+
 ## Development
 
 ```bash
