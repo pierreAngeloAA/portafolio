@@ -208,7 +208,7 @@ export const projects: Project[] = [
     title: 'Dashboard de Clash of Clans',
     status: { label: 'Proyecto personal', tone: 'info' },
     description:
-      'Dashboard del progreso de cuentas de Clash of Clans. Lee un Google Sheet público (gviz y la vista htmlview coloreada) e integra la API oficial mediante un proxy que resguarda el token.',
+      'Dashboard del progreso de varias cuentas de Clash of Clans: el nivel de cada defensa, tropa, héroe y hechizo, y cuánto falta para el máximo. Una API en Rails con PostgreSQL sincroniza los datos con la API oficial sin exponer el token al navegador.',
     tags: ['Rails 8.1 API', 'PostgreSQL', 'React 19', 'Vite', 'Tailwind CSS', 'API REST', 'GitHub Actions'],
     repo: 'https://github.com/pierreAngeloAA/clash-dashboard',
   },
