@@ -211,7 +211,6 @@ export const projects: Project[] = [
       'Dashboard del progreso de cuentas de Clash of Clans. Lee un Google Sheet público (gviz y la vista htmlview coloreada) e integra la API oficial mediante un proxy que resguarda el token.',
     tags: ['Rails 8.1 API', 'PostgreSQL', 'React 19', 'Vite', 'Tailwind CSS', 'API REST', 'GitHub Actions'],
     repo: 'https://github.com/pierreAngeloAA/clash-dashboard',
-    demo: 'https://clash-progreso-web.onrender.com',
   },
   {
     title: 'Configuración versionada, corte de material y reserva de inventario',
