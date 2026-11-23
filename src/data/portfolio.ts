@@ -154,32 +154,33 @@ export const projects: Project[] = [
     title: 'TallernApp — Mantenimiento predictivo vehicular',
     status: { label: 'En desarrollo', tone: 'warning' },
     description:
-      'Proyecto propio para autos y motos que reemplaza las tablas genéricas de mantenimiento ("cambia el aceite cada 5.000 km") por la probabilidad real de falla de cada pieza. Conecta a los dueños de vehículos con talleres y almacenes de repuestos. API en Rails y tres aplicaciones Angular: cliente, taller y almacén.',
+      'Proyecto que desarrollo junto al Ing. Alexander Taborda Acosta, antes llamado Maintenance. Para autos y motos, reemplaza las tablas genéricas de mantenimiento ("cambia el aceite cada 5.000 km") por la probabilidad estimada de falla de cada pieza, y conecta a los dueños de vehículos con talleres. API en Rails y una aplicación React con áreas para cliente, taller y almacén.',
     highlights: [
       {
         title: 'Motor de confiabilidad',
-        text: 'Curvas de riesgo tipo Weibull por pieza, ajustadas por el clima y el terreno de la ciudad del vehículo, que estiman el riesgo de falla en el próximo tramo de uso.',
+        text: 'Curvas de riesgo tipo Weibull por pieza y tipo de vehículo, ajustadas por las condiciones de la ciudad, que estiman la probabilidad de falla según el uso.',
       },
       {
-        title: 'Red de talleres y almacenes',
-        text: 'Solicitudes de servicio ofrecidas a los talleres cercanos (distancia Haversine en SQL), permisos de acceso del dueño al vehículo y compra de repuestos compatibles en una transacción que evita la sobreventa.',
+        title: 'Citas y cotizaciones con talleres',
+        text: 'Talleres cercanos por distancia calculada en SQL, agenda, cotizaciones que el cliente aprueba antes de cada cita, acceso limitado al vehículo y opiniones verificadas.',
       },
       {
-        title: 'Diagnóstico mensual',
-        text: 'Reporte que combina la predicción del motor de riesgo, la inspección del técnico y los vencimientos del RUNT, generado en segundo plano.',
+        title: 'RUNT y NHTSA',
+        text: 'El cliente consulta su placa en el RUNT y decide qué datos adoptar, sin bloquear nunca el registro. NHTSA para decodificar el VIN y consultar recalls.',
       },
       {
-        title: 'Integraciones y calidad',
-        text: 'NHTSA para decodificar el VIN y consultar recalls, y RUNT vía PlacApi, sin bloquear nunca el registro. TDD con cobertura mínima del 80 % verificada en CI.',
+        title: 'Pruebas y calidad',
+        text: 'RSpec en la API y Vitest, Testing Library y MSW en el frontend, con cobertura mínima del 80 %; Brakeman en CI.',
       },
     ],
     tags: [
       'Rails 8.1 API',
-      'Angular 20',
+      'React 19',
       'TypeScript',
       'PostgreSQL',
+      'Vite',
       'RSpec',
-      'Jasmine / Karma',
+      'Vitest',
       'NHTSA API',
       'Brakeman',
       'GitHub Actions',
