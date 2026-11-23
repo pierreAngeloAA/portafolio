@@ -112,7 +112,6 @@ export const projects: Project[] = [
       'Chrome headless',
       'Webhooks',
     ],
-    demo: 'https://sadypit.prev.sapenlinea.com.co/',
   },
   {
     title: 'Sistema contravencional y de cobro coactivo',
@@ -150,7 +149,6 @@ export const projects: Project[] = [
       'AWS ECS Fargate',
       'Bitbucket Pipelines',
     ],
-    demo: 'https://contravencional.dev.sapenlinea.com.co/login',
   },
   {
     title: 'TallernApp — Mantenimiento predictivo vehicular',
@@ -186,7 +184,6 @@ export const projects: Project[] = [
       'Brakeman',
       'GitHub Actions',
     ],
-    demo: 'https://tallernapp.com/client/login?returnUrl=%2Fclient%2Fvehicles',
   },
   {
     title: 'verified-recipes — Recetas verificadas para agentes de IA',
