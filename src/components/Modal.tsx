@@ -1,4 +1,5 @@
 import { useEffect, useRef, type MouseEvent, type ReactNode } from 'react'
+import { useLanguage } from '../i18n/language'
 
 type Props = {
   open: boolean
@@ -9,6 +10,7 @@ type Props = {
 }
 
 export default function Modal({ open, onClose, labelledBy, className, children }: Props) {
+  const { t } = useLanguage()
   const dialogRef = useRef<HTMLDialogElement>(null)
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function Modal({ open, onClose, labelledBy, className, children }
             type="button"
             className="modal__close"
             onClick={onClose}
-            aria-label="Cerrar"
+            aria-label={t.close}
           >
             ✕
           </button>

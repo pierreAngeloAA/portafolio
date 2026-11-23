@@ -1,16 +1,18 @@
 import { useState } from 'react'
-import { education, languages, type Education as EducationItem } from '../data/portfolio'
+import type { Education as EducationItem } from '../data/portfolio'
+import { useLanguage } from '../i18n/language'
 import DocumentModal from './DocumentModal'
 
 export default function Education() {
+  const { t, content } = useLanguage()
   const [selected, setSelected] = useState<EducationItem | null>(null)
 
   return (
     <section id="formacion" className="section">
       <div className="container">
-        <h2 className="section__title">Formación</h2>
+        <h2 className="section__title">{t.nav.education}</h2>
         <div className="education">
-          {education.map((item) => {
+          {content.education.map((item) => {
             const documents = item.documents ?? []
 
             return (
@@ -31,16 +33,16 @@ export default function Education() {
                     onClick={() => setSelected(item)}
                     aria-haspopup="dialog"
                   >
-                    {documents.length > 1 ? 'Ver documentos →' : 'Ver documento →'}
+                    {documents.length > 1 ? t.seeDocuments : t.seeDocument}
                   </button>
                 )}
               </article>
             )
           })}
         </div>
-        <h3 className="education__languages-title">Idiomas</h3>
+        <h3 className="education__languages-title">{t.spokenLanguages}</h3>
         <ul className="tags">
-          {languages.map((lang) => (
+          {content.languages.map((lang) => (
             <li key={lang} className="tag">
               {lang}
             </li>
