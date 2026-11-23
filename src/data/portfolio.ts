@@ -36,7 +36,9 @@ export type Job = {
   company: string
   period: string
   location: string
-  highlights: string[]
+  summary: string
+  // What was built and the technologies used for it
+  work: { name: string; text: string; tags: string[] }[]
 }
 
 export const experience: Job[] = [
@@ -45,15 +47,29 @@ export const experience: Job[] = [
     company: 'Sistemas y Aplicaciones en Línea',
     period: 'Enero 2025 – Actualidad',
     location: 'Barranquilla, Colombia · Remoto',
-    highlights: [
-      'Dirección técnica, decisiones de arquitectura y revisión de código del proyecto de fotodetección, junto con la definición funcional del flujo de infracciones con las autoridades de tránsito.',
-      'Desarrollador backend principal de fotodetección: Ruby 3.3 / Rails 7.2 API-only, PostgreSQL, Redis + Sidekiq, AASM, Docker y AWS (ECS, ECR, S3, CloudFront) con despliegue continuo en GitHub Actions.',
-      'Contravencional y cobro coactivo: funcionalidades backend en Java 21 y Spring Boot sobre PostgreSQL, en un monolito modular migrado desde Oracle con el patrón Strangler Fig, integración SOAP con SIMIT mediante patrón outbox y despliegue en AWS ECS Fargate con Bitbucket Pipelines (Spring Security, Spring Data JPA, Flyway, Redis, OpenAPI, JUnit, Mockito).',
-      'Frontend en Angular 20, TypeScript, RxJS, Angular Material y Jest, con arquitectura de microfrontends sobre Angular Elements.',
-      'Generación de PDF con Liquid y Chrome headless en Rails y en un servicio NestJS, eliminando una dependencia SaaS de pago.',
-      'Integraciones con plataformas estatales: envío de infracciones a SIMIT y a la plataforma contravencional, consultas al RUNT y webhooks de proveedores de cámaras.',
-      'Autorización y seguridad: control de acceso por roles con permisos por acción, auditoría, corrección de inyección SQL y de enumeración de usuarios; Brakeman en el flujo de trabajo.',
-      'Migración de la suite de pruebas de Minitest a RSpec con servicios externos simulados; capacitación y soporte de segunda línea a las autoridades de tránsito.',
+    summary:
+      'Dirección técnica, arquitectura y revisión de código de fotodetección, y definición funcional del flujo de infracciones con las autoridades de tránsito, a las que también doy capacitación y soporte.',
+    work: [
+      {
+        name: 'Backend de fotodetección',
+        text: 'Desarrollador principal: integraciones con SIMIT, RUNT, la plataforma contravencional y proveedores de cámaras; permisos por rol y acción, auditoría y pruebas.',
+        tags: ['Ruby 3.3', 'Rails 7.2 API', 'PostgreSQL', 'Redis', 'Sidekiq', 'AASM', 'RSpec', 'Brakeman', 'Docker', 'AWS ECS', 'ECR', 'S3', 'CloudFront', 'GitHub Actions'],
+      },
+      {
+        name: 'Backend contravencional y de cobro coactivo',
+        text: 'Monolito modular migrado desde Oracle con Strangler Fig e integración SOAP con SIMIT mediante outbox.',
+        tags: ['Java 21', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'PostgreSQL', 'Flyway', 'Redis', 'SOAP', 'OpenAPI', 'JUnit', 'Mockito', 'AWS ECS Fargate', 'Bitbucket Pipelines'],
+      },
+      {
+        name: 'Frontend',
+        text: 'Arquitectura de microfrontends.',
+        tags: ['Angular 20', 'TypeScript', 'RxJS', 'Angular Material', 'Angular Elements', 'Jest'],
+      },
+      {
+        name: 'Generación de PDF',
+        text: 'Reemplazó una dependencia SaaS de pago.',
+        tags: ['Liquid', 'Chrome headless', 'Rails', 'NestJS'],
+      },
     ],
   },
   {
@@ -61,11 +77,28 @@ export const experience: Job[] = [
     company: 'Alexander Taborda Acosta',
     period: 'Junio 2022 – Enero 2025',
     location: 'Barranquilla, Colombia · Remoto',
-    highlights: [
-      'Ruby on Rails sobre PostgreSQL: modelado de datos, migraciones, endpoints CRUD y lógica de negocio con ActiveRecord, concerns y Service Objects.',
-      'Interfaces con React (componentes, hooks y estado) consumiendo APIs REST, vistas Rails con JavaScript y jQuery, y aplicaciones Angular independientes.',
-      'Procesamiento asíncrono con Sidekiq y Redis para correos, reportes y exportaciones Excel/PDF.',
-      'Autenticación, sesiones, tokens y permisos por rol; carga de archivos con CarrierWave / Active Storage; Docker, Git/GitHub, Jira y Postman.',
+    summary: 'Desarrollo de aplicaciones web de punta a punta: datos, lógica de negocio, interfaces y procesos en segundo plano.',
+    work: [
+      {
+        name: 'Backend',
+        text: 'Modelado de datos, endpoints CRUD, lógica de negocio, autenticación y permisos por rol.',
+        tags: ['Ruby on Rails', 'PostgreSQL', 'ActiveRecord', 'Service Objects', 'CarrierWave', 'Active Storage'],
+      },
+      {
+        name: 'Procesos en segundo plano',
+        text: 'Correos, reportes y exportaciones Excel/PDF.',
+        tags: ['Sidekiq', 'Redis'],
+      },
+      {
+        name: 'Frontend',
+        text: 'Interfaces que consumen APIs REST, vistas Rails y aplicaciones Angular independientes.',
+        tags: ['React', 'Angular', 'JavaScript', 'jQuery', 'ERB', 'Bootstrap'],
+      },
+      {
+        name: 'Herramientas',
+        text: 'Entorno, control de versiones y seguimiento.',
+        tags: ['Docker', 'Git', 'GitHub', 'Jira', 'Postman'],
+      },
     ],
   },
 ]
