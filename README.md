@@ -11,7 +11,7 @@ Personal portfolio site: experience, projects, skills, education and contact.
 
 ## Editing the content
 
-All the text lives in **`src/data/portfolio.ts`**: experience, projects (with repo and demo links), skills and education. The components in `src/components/` only render that data.
+All the content lives in **`src/data/portfolio.ts`** (Spanish) and **`src/data/portfolio.en.ts`** (English); update both. Interface strings are in `src/i18n/ui.ts`. Spanish is the default and `?lang=en` opens the site in English. It covers experience, projects (with repo and demo links), skills and education. The components in `src/components/` only render that data.
 
 ## CV
 

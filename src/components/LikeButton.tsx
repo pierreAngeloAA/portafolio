@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
+import { useLanguage } from '../i18n/language'
 
 type LikesState = { count: number; liked: boolean }
 
 const API_URL = '/api/likes'
 
 export default function LikeButton() {
+  const { t } = useLanguage()
   const [likes, setLikes] = useState<LikesState | null>(null)
   const [pending, setPending] = useState(false)
   const [burst, setBurst] = useState(0)
@@ -46,10 +48,10 @@ export default function LikeButton() {
       aria-pressed={likes.liked}
       aria-label={
         likes.liked
-          ? `Quitar me gusta. ${likes.count} me gusta`
-          : `Me gusta este portafolio. ${likes.count} me gusta`
+          ? t.unlikeLabel(likes.count)
+          : t.likeLabel(likes.count)
       }
-      title={likes.liked ? '¡Gracias!' : '¿Te gusta mi portafolio?'}
+      title={likes.liked ? t.likedTitle : t.likeTitle}
     >
       {/* key: reinicia la animación de la manito en cada like */}
       <svg

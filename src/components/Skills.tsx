@@ -1,12 +1,14 @@
-import { skills } from '../data/portfolio'
+import { useLanguage } from '../i18n/language'
 
 export default function Skills() {
+  const { t, content } = useLanguage()
+
   return (
     <section id="habilidades" className="section section--alt">
       <div className="container">
-        <h2 className="section__title">Habilidades</h2>
+        <h2 className="section__title">{t.nav.skills}</h2>
         <div className="skills">
-          {skills.map((skill) => (
+          {content.skills.map((skill) => (
             <div key={skill.group} className="skills__group">
               <h3>{skill.group}</h3>
               <ul className="tags">

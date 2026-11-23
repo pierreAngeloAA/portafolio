@@ -1,4 +1,5 @@
 import type { Project } from '../data/portfolio'
+import { useLanguage } from '../i18n/language'
 import Modal from './Modal'
 
 type Props = {
@@ -7,6 +8,8 @@ type Props = {
 }
 
 export default function ProjectModal({ project, onClose }: Props) {
+  const { t } = useLanguage()
+
   return (
     <Modal open={project !== null} onClose={onClose} labelledBy="project-modal-title">
       {project && (
@@ -48,7 +51,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Código
+                  {t.code}
                 </a>
               )}
               {project.demo && (
@@ -58,7 +61,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Ver sitio
+                  {t.seeSite}
                 </a>
               )}
             </div>
