@@ -24,6 +24,7 @@ export const profile = {
   ],
   email: 'pierrealgarin@gmail.com',
   whatsapp: '573022963990',
+  cv: '/cv/pierre-algarin-cv-es.pdf',
   links: {
     github: 'https://github.com/pierreAngeloAA',
     linkedin: 'https://www.linkedin.com/in/pierre-angelo-a-3937121aa',

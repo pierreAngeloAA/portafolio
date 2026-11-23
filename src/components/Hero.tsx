@@ -43,6 +43,9 @@ export default function Hero() {
           <a href="#contacto" className="btn">
             Contactar
           </a>
+          <a href={profile.cv} className="btn" download>
+            Descargar CV (PDF)
+          </a>
         </div>
       </div>
     </section>
