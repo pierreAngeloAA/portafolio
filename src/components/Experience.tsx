@@ -1,12 +1,14 @@
-import { experience } from '../data/portfolio'
+import { useLanguage } from '../i18n/language'
 
 export default function Experience() {
+  const { t, content } = useLanguage()
+
   return (
     <section id="experiencia" className="section section--alt">
       <div className="container">
-        <h2 className="section__title">Experiencia</h2>
+        <h2 className="section__title">{t.nav.experience}</h2>
         <ol className="timeline">
-          {experience.map((job) => (
+          {content.experience.map((job) => (
             <li key={job.role + job.company} className="timeline__item">
               <p className="timeline__period">{job.period}</p>
               <h3 className="timeline__role">{job.role}</h3>

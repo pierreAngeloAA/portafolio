@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { profile } from '../data/portfolio'
+import { useLanguage } from '../i18n/language'
 
 async function copyToClipboard(text: string) {
   if (navigator.clipboard && window.isSecureContext) {
@@ -18,6 +18,8 @@ async function copyToClipboard(text: string) {
 }
 
 export default function Contact() {
+  const { t, content } = useLanguage()
+  const { profile } = content
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
@@ -38,8 +40,8 @@ export default function Contact() {
   return (
     <section id="contacto" className="section section--alt">
       <div className="container contact">
-        <h2 className="section__title">Contacto</h2>
-        <p>¿Tienes un proyecto en mente o una oportunidad? Escríbeme.</p>
+        <h2 className="section__title">{t.nav.contact}</h2>
+        <p>{t.contactPrompt}</p>
         <div className="contact__actions">
           <button
             type="button"
@@ -47,7 +49,7 @@ export default function Contact() {
             onClick={handleCopyEmail}
             aria-live="polite"
           >
-            {copied ? '¡Email copiado!' : profile.email}
+            {copied ? t.emailCopied : profile.email}
           </button>
           <a
             href={`https://wa.me/${profile.whatsapp}`}

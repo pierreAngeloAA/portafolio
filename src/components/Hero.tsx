@@ -1,16 +1,19 @@
-import { profile } from '../data/portfolio'
+import { useLanguage } from '../i18n/language'
 
 export default function Hero() {
+  const { t, content } = useLanguage()
+  const { profile } = content
+
   return (
     <section id="inicio" className="hero">
       <div className="container">
-        <p className="hero__greeting">Hola, soy</p>
+        <p className="hero__greeting">{t.greeting}</p>
         <h1 className="hero__name">
           <a
             href={profile.links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            title="Ver mi perfil de LinkedIn"
+            title={t.linkedinTitle}
           >
             {profile.name}
           </a>
@@ -24,7 +27,7 @@ export default function Hero() {
                 href={tech.docs}
                 target="_blank"
                 rel="noopener noreferrer"
-                title={`Documentación oficial de ${tech.name}`}
+                title={t.officialDocs(tech.name)}
               >
                 {tech.name}
               </a>
@@ -38,10 +41,13 @@ export default function Hero() {
         </p>
         <div className="hero__actions">
           <a href="#proyectos" className="btn btn--primary">
-            Ver proyectos
+            {t.seeProjects}
           </a>
           <a href="#contacto" className="btn">
-            Contactar
+            {t.contactMe}
+          </a>
+          <a href={profile.cv} className="btn" download>
+            {t.downloadCv}
           </a>
         </div>
       </div>

@@ -1,18 +1,20 @@
 import { useState } from 'react'
-import { projects, type Project } from '../data/portfolio'
+import type { Project } from '../data/portfolio'
+import { useLanguage } from '../i18n/language'
 import ProjectModal from './ProjectModal'
 
 const VISIBLE_TAGS = 4
 
 export default function Projects() {
+  const { t, content } = useLanguage()
   const [selected, setSelected] = useState<Project | null>(null)
 
   return (
     <section id="proyectos" className="section">
       <div className="container">
-        <h2 className="section__title">Proyectos destacados</h2>
+        <h2 className="section__title">{t.featuredProjects}</h2>
         <div className="projects">
-          {projects.map((project) => {
+          {content.projects.map((project) => {
             const hiddenTags = project.tags.length - VISIBLE_TAGS
 
             return (
@@ -43,7 +45,7 @@ export default function Projects() {
                   onClick={() => setSelected(project)}
                   aria-haspopup="dialog"
                 >
-                  Ver detalles →
+                  {t.seeDetails}
                 </button>
               </article>
             )
