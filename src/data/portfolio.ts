@@ -144,7 +144,7 @@ export const projects: Project[] = [
       'Flyway',
       'Redis',
       'OpenAPI',
-      'Angular 22',
+      'Angular 20',
       'Angular Elements',
       'AWS ECS Fargate',
       'Bitbucket Pipelines',
