@@ -20,15 +20,29 @@ export const experience: Job[] = [
     company: 'Sistemas y Aplicaciones en Línea',
     period: 'January 2025 – Present',
     location: 'Barranquilla, Colombia · Remote',
-    highlights: [
-      'Technical direction, architecture decisions and code review for the photo-enforcement project, along with the functional definition of the violation workflow with traffic authorities.',
-      'Main back-end developer of the photo-enforcement platform: Ruby 3.3 / Rails 7.2 API-only, PostgreSQL, Redis + Sidekiq, AASM, Docker and AWS (ECS, ECR, S3, CloudFront) with continuous deployment through GitHub Actions.',
-      'Violations processing and debt collection: back-end features in Java 21 and Spring Boot on PostgreSQL, in a modular monolith migrated from Oracle with the Strangler Fig pattern, SOAP integration with SIMIT (national fines system) using the outbox pattern, and deployment on AWS ECS Fargate with Bitbucket Pipelines (Spring Security, Spring Data JPA, Flyway, Redis, OpenAPI, JUnit, Mockito).',
-      'Front end in Angular 20, TypeScript, RxJS, Angular Material and Jest, with a micro-frontend architecture on Angular Elements.',
-      'PDF generation with Liquid and headless Chrome in Rails and in a NestJS service, removing a paid SaaS dependency.',
-      'Integrations with government platforms: violations sent to SIMIT and to the violations-processing platform, RUNT (national vehicle registry) lookups and webhooks from camera vendors.',
-      'Authorization and security: role-based access control with per-action permissions, auditing, SQL injection and user enumeration fixes; Brakeman in the workflow.',
-      'Migration of the test suite from Minitest to RSpec with mocked external services; training and second-line support for traffic authorities.',
+    summary:
+      'Technical direction, architecture and code review for the photo-enforcement platform, and functional definition of the violation workflow with traffic authorities, whom I also train and support.',
+    work: [
+      {
+        name: 'Photo-enforcement back end',
+        text: 'Main developer: integrations with SIMIT (national fines system), RUNT (national vehicle registry), the violations-processing platform and camera vendors; role and action permissions, auditing and tests.',
+        tags: es.experience[0].work[0].tags,
+      },
+      {
+        name: 'Violations processing and debt collection back end',
+        text: 'Modular monolith migrated from Oracle with Strangler Fig and SOAP integration with SIMIT through an outbox.',
+        tags: es.experience[0].work[1].tags,
+      },
+      {
+        name: 'Front end',
+        text: 'Micro-frontend architecture.',
+        tags: es.experience[0].work[2].tags,
+      },
+      {
+        name: 'PDF generation',
+        text: 'Replaced a paid SaaS dependency.',
+        tags: ['Liquid', 'Headless Chrome', 'Rails', 'NestJS'],
+      },
     ],
   },
   {
@@ -36,11 +50,28 @@ export const experience: Job[] = [
     company: 'Alexander Taborda Acosta',
     period: 'June 2022 – January 2025',
     location: 'Barranquilla, Colombia · Remote',
-    highlights: [
-      'Ruby on Rails on PostgreSQL: data modeling, migrations, CRUD endpoints and business logic with ActiveRecord, concerns and Service Objects.',
-      'React interfaces (components, hooks and state) consuming REST APIs, Rails views with JavaScript and jQuery, and standalone Angular applications.',
-      'Background processing with Sidekiq and Redis for emails, reports and Excel/PDF exports.',
-      'Authentication, sessions, tokens and role permissions; file uploads with CarrierWave / Active Storage; Docker, Git/GitHub, Jira and Postman.',
+    summary: 'End-to-end web application development: data, business logic, interfaces and background processing.',
+    work: [
+      {
+        name: 'Back end',
+        text: 'Data modeling, CRUD endpoints, business logic, authentication and role permissions.',
+        tags: es.experience[1].work[0].tags,
+      },
+      {
+        name: 'Background processing',
+        text: 'Emails, reports and Excel/PDF exports.',
+        tags: es.experience[1].work[1].tags,
+      },
+      {
+        name: 'Front end',
+        text: 'Interfaces consuming REST APIs, Rails views and standalone Angular applications.',
+        tags: es.experience[1].work[2].tags,
+      },
+      {
+        name: 'Tools',
+        text: 'Environment, version control and tracking.',
+        tags: es.experience[1].work[3].tags,
+      },
     ],
   },
 ]

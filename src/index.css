@@ -954,14 +954,27 @@ body:has(.modal[open]) {
   color: var(--text-muted);
 }
 
-.timeline__highlights {
-  margin: 0;
-  padding-left: 1.2rem;
+.timeline__summary {
+  margin: 0 0 1.25rem;
   color: var(--text-muted);
 }
 
-.timeline__highlights li + li {
-  margin-top: 0.4rem;
+.timeline__work {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline__work h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.timeline__work p {
+  margin: 0.15rem 0 0.6rem;
+  color: var(--text-muted);
 }
 
 /* Education */
