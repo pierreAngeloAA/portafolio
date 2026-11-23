@@ -4,6 +4,8 @@ export type Language = 'es' | 'en'
 const es = {
   pageTitle: 'Pierre Algarín · Portafolio',
   languageSwitch: 'Idioma',
+  openMenu: 'Abrir menú',
+  closeMenu: 'Cerrar menú',
   nav: {
     about: 'Sobre mí',
     experience: 'Experiencia',
@@ -38,6 +40,8 @@ const es = {
 const en: typeof es = {
   pageTitle: 'Pierre Algarín · Portfolio',
   languageSwitch: 'Language',
+  openMenu: 'Open menu',
+  closeMenu: 'Close menu',
   nav: {
     about: 'About',
     experience: 'Experience',
