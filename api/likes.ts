@@ -1,9 +1,6 @@
 import { createHash } from 'node:crypto'
 import { Redis } from '@upstash/redis'
 
-// Likes con los que arranca el contador; en Redis solo se guardan los reales
-const BASE_LIKES = 21
-
 const COUNT_KEY = 'likes:count'
 const VOTER_TTL_SECONDS = 60 * 60 * 24 * 365
 
@@ -29,7 +26,7 @@ async function state(request: Request) {
     redis!.get<number>(COUNT_KEY),
     redis!.exists(voterKey(request)),
   ])
-  return { count: BASE_LIKES + (count ?? 0), liked: liked === 1 }
+  return { count: count ?? 0, liked: liked === 1 }
 }
 
 function json(body: unknown, status = 200) {
