@@ -203,6 +203,38 @@ a:hover {
   transform: scaleX(1);
 }
 
+/* Narrow screens: links stay on a single row that scrolls sideways */
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 6rem;
+  }
+
+  .navbar__inner {
+    gap: 0.25rem;
+    padding-top: 0.5rem;
+  }
+
+  .navbar__links {
+    flex-wrap: nowrap;
+    gap: 1.25rem;
+    width: 100%;
+    padding: 0.25rem 2rem 0.5rem 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+  }
+
+  .navbar__links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar__links a {
+    display: block;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+}
+
 /* Hero */
 .hero {
   padding: 3rem 0 1.5rem;
@@ -432,6 +464,15 @@ a:hover {
   -webkit-line-clamp: 3;
   line-clamp: 3;
   overflow: hidden;
+}
+
+/* Must not stretch: in a taller card the clamp box would reveal a cut-off fourth line */
+.card__text.project-card__summary {
+  flex: none;
+}
+
+.project-card__summary + .tags {
+  margin-top: auto;
 }
 
 .card__open {
@@ -911,17 +952,6 @@ body:has(.modal[open]) {
 .education .card__open {
   margin-top: auto;
   padding-top: 1rem;
-}
-
-/* Párrafos largos justificados; la separación silábica evita huecos entre palabras */
-.about p,
-.timeline__highlights li,
-.project-card__summary,
-.modal__description,
-.card__highlights p {
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
 }
 
 /* Botón flotante de me gusta */
