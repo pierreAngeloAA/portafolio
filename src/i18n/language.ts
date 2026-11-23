@@ -23,8 +23,11 @@ function isLanguage(value: string | null): value is Language {
   return value === 'es' || value === 'en'
 }
 
-// ?lang= wins so a shared link opens in its language; then the saved choice
+const ENGLISH_PATH = /^\/en(\.html)?\/?$/
+
+// The address wins so a shared link opens in its language; then the saved choice
 export function initialLanguage(): Language {
+  if (ENGLISH_PATH.test(window.location.pathname)) return 'en'
   const fromUrl = new URLSearchParams(window.location.search).get('lang')
   if (isLanguage(fromUrl)) return fromUrl
   try {
@@ -43,7 +46,7 @@ export function rememberLanguage(language: Language) {
     // Storage can be blocked; the choice lasts for this visit
   }
   const url = new URL(window.location.href)
-  if (language === 'es') url.searchParams.delete('lang')
-  else url.searchParams.set('lang', language)
+  url.searchParams.delete('lang')
+  url.pathname = language === 'en' ? '/en' : '/'
   window.history.replaceState(window.history.state, '', url)
 }

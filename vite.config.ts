@@ -4,4 +4,10 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  build: {
+    rolldownOptions: {
+      // en.html is the same app with English metadata, served at /en
+      input: ['index.html', 'en.html'],
+    },
+  },
 })
