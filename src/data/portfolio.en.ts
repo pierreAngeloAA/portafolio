@@ -11,6 +11,7 @@ export const profile: typeof es.profile = {
     'I am currently the Technical and Functional Lead of a traffic photo-enforcement platform for Colombian municipalities.',
     'My strengths are integrations with government platforms, architecture, authorization, performance optimization and AWS deployment.',
     'I am very good at automating processes: document generation, background jobs, integrations between platforms and deployments.',
+    'I practice AI-assisted development with agents such as Claude Code: I define the tasks, review the results and decide what gets published. I also published verified-recipes, an MCP server for AI agents.',
   ],
 }
 
