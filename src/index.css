@@ -64,6 +64,8 @@ a:hover {
   justify-content: space-between;
   gap: 1rem;
   min-height: 4rem;
+  /* Same width as the content, but it grows with large font sizes */
+  max-width: max(1040px, 62rem);
 }
 
 .navbar__brand {
@@ -71,6 +73,7 @@ a:hover {
   align-items: center;
   gap: 0.7rem;
   color: var(--text);
+  min-width: 0;
 }
 
 .navbar__brand:hover {
@@ -98,6 +101,7 @@ a:hover {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  flex-shrink: 0;
 }
 
 .navbar__brand:hover .navbar__logo {
@@ -130,6 +134,9 @@ a:hover {
   background-clip: text;
   -webkit-background-clip: text;
   transition: color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Al pasar el cursor, el nombre toma el degradado del logo */
@@ -161,7 +168,7 @@ a:hover {
 
 .navbar__links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin: 0 0 0 auto;
   padding: 0;
   list-style: none;
@@ -174,6 +181,7 @@ a:hover {
   font-size: 1.05rem;
   font-weight: 500;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 /* Rayita que crece desde el centro al pasar el cursor */
@@ -282,8 +290,8 @@ a:hover {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Below this width the links no longer fit on the bar */
-@media (max-width: 960px) {
+/* Below this width the links no longer fit on the bar; em follows the user's font size */
+@media (max-width: 67.5em) {
   .navbar__toggle {
     display: flex;
   }
@@ -322,15 +330,15 @@ a:hover {
 
 @media (max-width: 400px) {
   .navbar__inner {
-    gap: 0.6rem;
-  }
-
-  .navbar__brand {
     gap: 0.5rem;
   }
 
+  .navbar__brand {
+    gap: 0.4rem;
+  }
+
   .navbar__name {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
 
