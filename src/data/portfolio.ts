@@ -19,6 +19,7 @@ export const profile = {
     'Desarrollador full-stack con cuatro años construyendo aplicaciones web en Ruby on Rails y Angular / React.',
     'Actualmente soy Líder Técnico y Funcional de una plataforma de fotodetección de infracciones de tránsito para municipios colombianos.',
     'Mis fortalezas son las integraciones con plataformas estatales, la arquitectura, la autorización, la optimización de rendimiento y el despliegue en AWS.',
+    'Soy muy bueno automatizando procesos: generación de documentos, tareas en segundo plano, integraciones entre plataformas y despliegues.',
   ],
   email: 'pierrealgarin@gmail.com',
   whatsapp: '573022963990',

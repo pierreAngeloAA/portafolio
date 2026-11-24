@@ -10,6 +10,7 @@ export const profile: typeof es.profile = {
     'Full-stack developer with four years building web applications in Ruby on Rails and Angular / React.',
     'I am currently the Technical and Functional Lead of a traffic photo-enforcement platform for Colombian municipalities.',
     'My strengths are integrations with government platforms, architecture, authorization, performance optimization and AWS deployment.',
+    'I am very good at automating processes: document generation, background jobs, integrations between platforms and deployments.',
   ],
 }
 
