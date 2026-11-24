@@ -16,18 +16,10 @@ export default function Experience() {
                 {job.company} · {job.location}
               </p>
               <p className="timeline__summary">{job.summary}</p>
-              <ul className="timeline__work">
-                {job.work.map((item) => (
-                  <li key={item.name}>
-                    <h4>{item.name}</h4>
-                    <p>{item.text}</p>
-                    <ul className="tags">
-                      {item.tags.map((tag) => (
-                        <li key={tag} className="tag">
-                          {tag}
-                        </li>
-                      ))}
-                    </ul>
+              <ul className="tags">
+                {job.tags.map((tag) => (
+                  <li key={tag} className="tag">
+                    {tag}
                   </li>
                 ))}
               </ul>

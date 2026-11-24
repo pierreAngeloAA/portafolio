@@ -20,58 +20,17 @@ export const experience: Job[] = [
     period: 'January 2025 – Present',
     location: 'Barranquilla, Colombia · Remote',
     summary:
-      'Technical direction, architecture and code review for the photo-enforcement platform, and functional definition of the violation workflow with traffic authorities, whom I also train and support.',
-    work: [
-      {
-        name: 'Photo-enforcement back end',
-        text: 'Main developer: integrations with SIMIT (national fines system), RUNT (national vehicle registry), the violations-processing platform and camera vendors; role and action permissions, auditing and tests.',
-        tags: es.experience[0].work[0].tags,
-      },
-      {
-        name: 'Violations processing and debt collection',
-        text: 'PDF documents with a public validation QR code, ingestion from the photo-enforcement platform and training course screens.',
-        tags: es.experience[0].work[1].tags,
-      },
-      {
-        name: 'Front end',
-        text: 'Micro-frontend architecture.',
-        tags: es.experience[0].work[2].tags,
-      },
-      {
-        name: 'PDF generation',
-        text: 'Replaced a paid SaaS dependency.',
-        tags: ['Liquid', 'Headless Chrome', 'Rails', 'NestJS'],
-      },
-    ],
+      'Technical direction, architecture and code review for photo enforcement, and functional definition of the violation workflow with traffic authorities, whom I also train and support. Main developer of the integrations with SIMIT (national fines system), RUNT (national vehicle registry), other traffic platforms and camera vendors, with role and action permissions, auditing and tests. PDF documents with a public validation QR code, data ingestion between platforms and training course screens. Micro-frontend architecture and in-house PDF generation, which replaced a paid SaaS dependency.',
+    tags: es.experience[0].tags.map((tag) => (tag === 'Chrome headless' ? 'Headless Chrome' : tag)),
   },
   {
     role: 'Web Developer',
     company: 'Alexander Taborda Acosta',
     period: 'June 2022 – January 2025',
     location: 'Barranquilla, Colombia · Remote',
-    summary: 'End-to-end web application development: data, business logic, interfaces and background processing.',
-    work: [
-      {
-        name: 'Back end',
-        text: 'Data modeling, CRUD endpoints, business logic, authentication and role permissions.',
-        tags: es.experience[1].work[0].tags,
-      },
-      {
-        name: 'Background processing',
-        text: 'Emails, reports and Excel/PDF exports.',
-        tags: es.experience[1].work[1].tags,
-      },
-      {
-        name: 'Front end',
-        text: 'Interfaces consuming REST APIs, Rails views and standalone Angular applications.',
-        tags: es.experience[1].work[2].tags,
-      },
-      {
-        name: 'Tools',
-        text: 'Environment, version control and tracking.',
-        tags: es.experience[1].work[3].tags,
-      },
-    ],
+    summary:
+      'End-to-end web application development: data modeling, CRUD endpoints, business logic, authentication and role permissions. Interfaces consuming REST APIs, Rails views and standalone Angular applications. Background processing for emails, reports and Excel/PDF exports, and file uploads.',
+    tags: es.experience[1].tags,
   },
 ]
 

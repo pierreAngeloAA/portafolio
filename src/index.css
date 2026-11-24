@@ -1020,24 +1020,6 @@ body:has(.modal[open]) {
   color: var(--text-muted);
 }
 
-.timeline__work {
-  display: grid;
-  gap: 1.25rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.timeline__work h4 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.timeline__work p {
-  margin: 0.15rem 0 0.6rem;
-  color: var(--text-muted);
-}
-
 /* Education */
 .education {
   display: grid;
@@ -1068,8 +1050,7 @@ body:has(.modal[open]) {
 
 /* Justified text; hyphenation keeps the gaps between words small */
 .about p,
-.timeline__summary,
-.timeline__work p {
+.timeline__summary {
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
