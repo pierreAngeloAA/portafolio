@@ -20,6 +20,7 @@ export const profile = {
     'Actualmente soy Líder Técnico y Funcional de una plataforma de fotodetección de infracciones de tránsito para municipios colombianos.',
     'Mis fortalezas son las integraciones con plataformas estatales, la arquitectura, la autorización, la optimización de rendimiento y el despliegue en AWS.',
     'Soy muy bueno automatizando procesos: generación de documentos, tareas en segundo plano, integraciones entre plataformas y despliegues.',
+    'Practico el desarrollo asistido por IA con agentes como Claude Code: defino las tareas, reviso los resultados y decido qué se publica. También publiqué verified-recipes, un servidor MCP para agentes de IA.',
   ],
   email: 'pierrealgarin@gmail.com',
   whatsapp: '573022963990',
