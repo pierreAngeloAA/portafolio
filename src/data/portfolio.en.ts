@@ -215,8 +215,9 @@ export const education: Education[] = [
     documents: [{ label: 'Certificate', src: '/documentos/diplomado.jpg' }],
   },
   {
-    title: 'Self-taught software development',
-    place: 'Platzi · The Odin Project · Udemy · Exercism',
+    title: 'Training in software development and technologies',
+    place: 'On the platforms:',
+    list: ['Platzi', 'The Odin Project', 'Udemy', 'Exercism'],
   },
 ]
 

@@ -26,6 +26,13 @@ export default function Education() {
                   {item.year && ` · ${item.year}`}
                 </p>
                 {item.detail && <p className="education__detail">{item.detail}</p>}
+                {item.list && (
+                  <ul className="education__list">
+                    {item.list.map((entry) => (
+                      <li key={entry}>{entry}</li>
+                    ))}
+                  </ul>
+                )}
                 {documents.length > 0 && (
                   <button
                     type="button"
