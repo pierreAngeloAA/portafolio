@@ -16,11 +16,7 @@ export const profile = {
   location: 'Barranquilla, Colombia',
   locationUrl: 'https://www.google.com/maps/place/Barranquilla,+Atl%C3%A1ntico,+Colombia',
   about: [
-    'Desarrollador full-stack con cuatro años construyendo aplicaciones web en Ruby on Rails y Angular / React.',
-    'Actualmente soy Líder Técnico y Funcional de una plataforma de fotodetección de infracciones de tránsito para municipios colombianos.',
-    'Mis fortalezas son las integraciones con plataformas estatales, la arquitectura, la autorización, la optimización de rendimiento y el despliegue en AWS.',
-    'Soy muy bueno automatizando procesos: generación de documentos, tareas en segundo plano, integraciones entre plataformas y despliegues.',
-    'Practico el desarrollo asistido por IA con agentes como Claude Code: defino las tareas, reviso los resultados y decido qué se publica. También publiqué verified-recipes, un servidor MCP para agentes de IA.',
+    'Desarrollador full-stack con cuatro años construyendo aplicaciones web en Ruby on Rails, Angular y React, y actualmente Líder Técnico y Funcional de una plataforma de fotodetección de infracciones de tránsito para municipios colombianos. Mis fortalezas son las integraciones con plataformas estatales, la arquitectura, la autorización, la optimización de rendimiento y el despliegue en AWS, y soy muy bueno automatizando procesos: documentos, tareas en segundo plano, integraciones y despliegues. Aplico principios SOLID y Clean Code en el diseño y la revisión de código, y practico el desarrollo asistido por IA con agentes como Claude Code: defino las tareas, reviso los resultados y decido qué se publica.',
   ],
   email: 'pierrealgarin@gmail.com',
   whatsapp: '573022963990',
