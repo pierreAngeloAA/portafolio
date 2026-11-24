@@ -47,7 +47,6 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <nav ref={navRef} className="container navbar__inner">
-        <LanguageSwitch />
         <a
           href="#inicio"
           className="navbar__brand"
@@ -84,6 +83,8 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        {/* Last, so it stays at the top right corner at any width */}
+        <LanguageSwitch />
       </nav>
     </header>
   )
