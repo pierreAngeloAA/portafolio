@@ -256,6 +256,7 @@ export type Education = {
   place: string
   year?: string
   detail?: string
+  list?: string[]
   documents?: { label: string; src: string }[]
 }
 
@@ -284,8 +285,9 @@ export const education: Education[] = [
     documents: [{ label: 'Certificado', src: '/documentos/diplomado.jpg' }],
   },
   {
-    title: 'Formación autodidacta en desarrollo',
-    place: 'Platzi · The Odin Project · Udemy · Exercism',
+    title: 'Formación en desarrollo de software y tecnologías',
+    place: 'En las plataformas:',
+    list: ['Platzi', 'The Odin Project', 'Udemy', 'Exercism'],
   },
 ]
 
