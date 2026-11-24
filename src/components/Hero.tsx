@@ -46,9 +46,6 @@ export default function Hero() {
           <a href="#contacto" className="btn">
             {t.contactMe}
           </a>
-          <a href={profile.cv} className="btn" download>
-            {t.downloadCv}
-          </a>
         </div>
       </div>
     </section>
