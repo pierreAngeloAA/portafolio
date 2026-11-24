@@ -7,8 +7,6 @@ export const profile = {
   // Cada tecnología enlaza a su documentación oficial
   stack: [
     { name: 'Ruby on Rails', docs: 'https://guides.rubyonrails.org/' },
-    { name: 'Java', docs: 'https://docs.oracle.com/en/java/' },
-    { name: 'Spring Boot', docs: 'https://docs.spring.io/spring-boot/' },
     { name: 'Angular', docs: 'https://angular.dev/' },
     { name: 'React', docs: 'https://react.dev/' },
     { name: 'PostgreSQL', docs: 'https://www.postgresql.org/docs/' },
@@ -18,7 +16,7 @@ export const profile = {
   location: 'Barranquilla, Colombia',
   locationUrl: 'https://www.google.com/maps/place/Barranquilla,+Atl%C3%A1ntico,+Colombia',
   about: [
-    'Desarrollador full-stack con cuatro años construyendo aplicaciones web en Ruby on Rails y Angular / React, y backend en Java con Spring Boot.',
+    'Desarrollador full-stack con cuatro años construyendo aplicaciones web en Ruby on Rails y Angular / React.',
     'Actualmente soy Líder Técnico y Funcional de una plataforma de fotodetección de infracciones de tránsito para municipios colombianos.',
     'Mis fortalezas son las integraciones con plataformas estatales, la arquitectura, la autorización, la optimización de rendimiento y el despliegue en AWS.',
   ],
@@ -55,9 +53,9 @@ export const experience: Job[] = [
         tags: ['Ruby 3.3', 'Rails 7.2 API', 'PostgreSQL', 'Redis', 'Sidekiq', 'AASM', 'RSpec', 'Brakeman', 'Docker', 'AWS ECS', 'ECR', 'S3', 'CloudFront', 'GitHub Actions'],
       },
       {
-        name: 'Backend contravencional y de cobro coactivo',
-        text: 'Monolito modular migrado desde Oracle con Strangler Fig e integración SOAP con SIMIT mediante outbox.',
-        tags: ['Java 21', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'PostgreSQL', 'Flyway', 'Redis', 'SOAP', 'OpenAPI', 'JUnit', 'Mockito', 'AWS ECS Fargate', 'Bitbucket Pipelines'],
+        name: 'Contravencional y cobro coactivo',
+        text: 'Documentos PDF con código QR de validación pública, ingesta desde fotodetección y pantallas de cursos.',
+        tags: ['Java', 'Spring Boot', 'PostgreSQL', 'Angular 20'],
       },
       {
         name: 'Frontend',
@@ -150,38 +148,22 @@ export const projects: Project[] = [
     title: 'Sistema contravencional y de cobro coactivo',
     status: { label: 'En desarrollo', tone: 'warning' },
     description:
-      'Migración del sistema contravencional de una Secretaría de Tránsito desde un monolito Oracle / Java legado hacia un stack moderno: cursos de capacitación, cobro coactivo, expediente documental, acuerdos de pago e integración con SIMIT.',
+      'Sistema contravencional de una Secretaría de Tránsito: cursos de capacitación, cobro coactivo, expediente documental, acuerdos de pago e integración con SIMIT. Participo con funcionalidades de backend y frontend.',
     highlights: [
       {
-        title: 'Monolito modular con Strangler Fig',
-        text: 'Bounded contexts con capas api, application, domain e infrastructure, y una capa anticorrupción hacia los catálogos e identificadores del sistema legado.',
+        title: 'Documentos con validación pública',
+        text: 'Mandamientos de pago, resoluciones y notificaciones en PDF con código QR firmado para verificar su autenticidad, y trazabilidad de cada emisión.',
       },
       {
-        title: 'Integración con SIMIT mediante outbox',
-        text: 'Recaudo sincronizado por SOAP a través de una tabla outbox y un job de reintentos, para no perder eventos cuando SIMIT no responde.',
+        title: 'Conexión con fotodetección',
+        text: 'Ingesta desde la plataforma de fotodetección, incluido el comparendo pedagógico, con reintentos por lotes para los PDF.',
       },
       {
-        title: 'Documentos y procesos programados',
-        text: 'Resoluciones, mandamientos de pago y certificados en PDF con código QR firmado con HMAC, generados por jobs diarios con Flyway gestionando el esquema.',
-      },
-      {
-        title: 'Microfrontends y despliegue',
-        text: 'Shell en Angular que carga cada módulo como Web Component con Angular Elements; backend en contenedores sobre AWS ECS Fargate y frontends en S3 + CloudFront, desplegados con Bitbucket Pipelines.',
+        title: 'Cursos y expediente',
+        text: 'Pantallas en Angular de inscripciones, asistencia y programación de cursos, y estado del comparendo pedagógico en el expediente.',
       },
     ],
-    tags: [
-      'Java 21',
-      'Spring Boot 3.5',
-      'Spring Security',
-      'PostgreSQL',
-      'Flyway',
-      'Redis',
-      'OpenAPI',
-      'Angular 20',
-      'Angular Elements',
-      'AWS ECS Fargate',
-      'Bitbucket Pipelines',
-    ],
+    tags: ['Java', 'Spring Boot', 'PostgreSQL', 'Angular 20', 'TypeScript'],
   },
   {
     title: 'TallernApp — Mantenimiento predictivo vehicular',
@@ -293,10 +275,10 @@ export const projects: Project[] = [
 ]
 
 export const skills: { group: string; items: string[] }[] = [
-  { group: 'Lenguajes', items: ['Ruby', 'Java 21', 'JavaScript', 'TypeScript', 'SQL y PL/pgSQL', 'HTML', 'CSS'] },
+  { group: 'Lenguajes', items: ['Ruby', 'Java', 'JavaScript', 'TypeScript', 'SQL y PL/pgSQL', 'HTML', 'CSS'] },
   {
     group: 'Backend',
-    items: ['Ruby on Rails (API-only y MVC)', 'Spring Boot', 'Spring Data JPA', 'NestJS', 'APIs REST y SOAP', 'OpenAPI', 'Service Objects', 'ActiveRecord', 'ActiveJob', 'Sidekiq', 'Liquid'],
+    items: ['Ruby on Rails (API-only y MVC)', 'Spring Boot', 'NestJS', 'APIs REST', 'Service Objects', 'ActiveRecord', 'ActiveJob', 'Sidekiq', 'Liquid'],
   },
   {
     group: 'Frontend',
@@ -304,12 +286,12 @@ export const skills: { group: string; items: string[] }[] = [
   },
   {
     group: 'Bases de datos y nube',
-    items: ['PostgreSQL', 'MySQL', 'Redis', 'Flyway', 'Docker y Compose', 'AWS (ECS Fargate, ECR, RDS, S3, CloudFront, SNS, CloudWatch)', 'Cloudflare R2', 'CI/CD (GitHub Actions, Bitbucket Pipelines)'],
+    items: ['PostgreSQL', 'MySQL', 'Redis', 'Docker y Compose', 'AWS (ECS Fargate, ECR, RDS, S3, CloudFront, SNS, CloudWatch)', 'Cloudflare R2', 'CI/CD (GitHub Actions, Bitbucket Pipelines)'],
   },
-  { group: 'Autenticación y seguridad', items: ['JWT', 'Devise', 'Sorcery', 'Spring Security', 'RBAC', 'API keys', 'Brakeman'] },
+  { group: 'Autenticación y seguridad', items: ['JWT', 'Devise', 'Sorcery', 'RBAC', 'API keys', 'Brakeman'] },
   {
     group: 'Pruebas y metodologías',
-    items: ['RSpec', 'FactoryBot', 'JUnit', 'Mockito', 'Jest', 'Vitest', 'Playwright', 'Postman', 'Agile', 'Jira', 'Git flow', 'Clean Code', 'SOLID', 'Desarrollo asistido por IA (Claude Code, MCP)'],
+    items: ['RSpec', 'FactoryBot', 'Jest', 'Vitest', 'Playwright', 'Postman', 'Agile', 'Jira', 'Git flow', 'Clean Code', 'SOLID', 'Desarrollo asistido por IA (Claude Code, MCP)'],
   },
 ]
 
