@@ -34,8 +34,7 @@ export type Job = {
   period: string
   location: string
   summary: string
-  // What was built and the technologies used for it
-  work: { name: string; text: string; tags: string[] }[]
+  tags: string[]
 }
 
 export const experience: Job[] = [
@@ -45,58 +44,17 @@ export const experience: Job[] = [
     period: 'Enero 2025 – Actualidad',
     location: 'Barranquilla, Colombia · Remoto',
     summary:
-      'Dirección técnica, arquitectura y revisión de código de fotodetección, y definición funcional del flujo de infracciones con las autoridades de tránsito, a las que también doy capacitación y soporte.',
-    work: [
-      {
-        name: 'Backend de fotodetección',
-        text: 'Desarrollador principal: integraciones con SIMIT, RUNT, la plataforma contravencional y proveedores de cámaras; permisos por rol y acción, auditoría y pruebas.',
-        tags: ['Ruby 3.3', 'Rails 7.2 API', 'PostgreSQL', 'Redis', 'Sidekiq', 'AASM', 'RSpec', 'Brakeman', 'Docker', 'AWS ECS', 'ECR', 'S3', 'CloudFront', 'GitHub Actions'],
-      },
-      {
-        name: 'Contravencional y cobro coactivo',
-        text: 'Documentos PDF con código QR de validación pública, ingesta desde fotodetección y pantallas de cursos.',
-        tags: ['Java', 'Spring Boot', 'PostgreSQL', 'Angular 20'],
-      },
-      {
-        name: 'Frontend',
-        text: 'Arquitectura de microfrontends.',
-        tags: ['Angular 20', 'TypeScript', 'RxJS', 'Angular Material', 'Angular Elements', 'Jest'],
-      },
-      {
-        name: 'Generación de PDF',
-        text: 'Reemplazó una dependencia SaaS de pago.',
-        tags: ['Liquid', 'Chrome headless', 'Rails', 'NestJS'],
-      },
-    ],
+      'Dirección técnica, arquitectura y revisión de código de fotodetección, y definición funcional del flujo de infracciones con las autoridades de tránsito, a las que también doy capacitación y soporte. Desarrollador principal de las integraciones con SIMIT, RUNT, otras plataformas de tránsito y proveedores de cámaras, con permisos por rol y acción, auditoría y pruebas. Documentos PDF con código QR de validación pública, ingesta de datos entre plataformas y pantallas de cursos. Arquitectura de microfrontends y generación propia de PDF, que reemplazó una dependencia SaaS de pago.',
+    tags: ['Ruby 3.3', 'Rails 7.2 API', 'PostgreSQL', 'Redis', 'Sidekiq', 'AASM', 'RSpec', 'Brakeman', 'Liquid', 'Chrome headless', 'NestJS', 'Java', 'Spring Boot', 'Angular 20', 'TypeScript', 'RxJS', 'Angular Material', 'Angular Elements', 'Jest', 'Docker', 'AWS ECS', 'ECR', 'S3', 'CloudFront', 'GitHub Actions'],
   },
   {
     role: 'Desarrollador Web',
     company: 'Alexander Taborda Acosta',
     period: 'Junio 2022 – Enero 2025',
     location: 'Barranquilla, Colombia · Remoto',
-    summary: 'Desarrollo de aplicaciones web de punta a punta: datos, lógica de negocio, interfaces y procesos en segundo plano.',
-    work: [
-      {
-        name: 'Backend',
-        text: 'Modelado de datos, endpoints CRUD, lógica de negocio, autenticación y permisos por rol.',
-        tags: ['Ruby on Rails', 'PostgreSQL', 'ActiveRecord', 'Service Objects', 'CarrierWave', 'Active Storage'],
-      },
-      {
-        name: 'Procesos en segundo plano',
-        text: 'Correos, reportes y exportaciones Excel/PDF.',
-        tags: ['Sidekiq', 'Redis'],
-      },
-      {
-        name: 'Frontend',
-        text: 'Interfaces que consumen APIs REST, vistas Rails y aplicaciones Angular independientes.',
-        tags: ['React', 'Angular', 'JavaScript', 'jQuery', 'ERB', 'Bootstrap'],
-      },
-      {
-        name: 'Herramientas',
-        text: 'Entorno, control de versiones y seguimiento.',
-        tags: ['Docker', 'Git', 'GitHub', 'Jira', 'Postman'],
-      },
-    ],
+    summary:
+      'Desarrollo de aplicaciones web de punta a punta: modelado de datos, endpoints CRUD, lógica de negocio, autenticación y permisos por rol. Interfaces que consumen APIs REST, vistas Rails y aplicaciones Angular independientes. Procesos en segundo plano para correos, reportes y exportaciones Excel/PDF, y carga de archivos.',
+    tags: ['Ruby on Rails', 'PostgreSQL', 'ActiveRecord', 'Service Objects', 'CarrierWave', 'Active Storage', 'Sidekiq', 'Redis', 'React', 'Angular', 'JavaScript', 'jQuery', 'ERB', 'Bootstrap', 'Docker', 'Git', 'GitHub', 'Jira', 'Postman'],
   },
 ]
 
