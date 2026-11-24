@@ -11,7 +11,6 @@ export const profile: typeof es.profile = {
     'I am currently the Technical and Functional Lead of a traffic photo-enforcement platform for Colombian municipalities.',
     'My strengths are integrations with government platforms, architecture, authorization, performance optimization and AWS deployment.',
   ],
-  cv: '/cv/pierre-algarin-cv-en.pdf',
 }
 
 export const experience: Job[] = [
