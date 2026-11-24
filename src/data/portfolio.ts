@@ -3,7 +3,7 @@
 export const profile = {
   name: 'Pierre Algarín',
   fullName: 'Pierre Angelo Algarín Vigna',
-  role: 'Desarrollador Full-Stack · Líder Técnico y Funcional',
+  role: 'Ingeniero y Desarrollador Full-Stack',
   // Cada tecnología enlaza a su documentación oficial
   stack: [
     { name: 'Ruby on Rails', docs: 'https://guides.rubyonrails.org/' },
